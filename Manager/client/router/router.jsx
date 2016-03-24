@@ -39,3 +39,9 @@ FlowRouter.route('/addclass', {
     ReactLayout.render(AddTheClass)
   }
 });
+
+FlowRouter.route('/addshedule', {
+  action: function() {
+    ReactLayout.render(AddShedule)
+  }
+});
