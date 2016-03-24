@@ -2,10 +2,10 @@ AddCourse = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
-    let courseId = ReactDOM.findDOMNode(this.refs.courseId).value.trim(), courseName = ReactDOM.findDOMNode(this.refs.courseName).value.trim(),
-    category = ReactDOM.findDOMNode(this.refs.category).value.trim(),
-    credit = ReactDOM.findDOMNode(this.refs.credit).value.trim(),
-    period = ReactDOM.findDOMNode(this.refs.period).value.trim();
+    let courseId = ReactDOM.findDOMNode(this.refs.courseId).value, courseName = ReactDOM.findDOMNode(this.refs.courseName).value,
+    category = ReactDOM.findDOMNode(this.refs.category).value,
+    credit = ReactDOM.findDOMNode(this.refs.credit).value,
+    period = ReactDOM.findDOMNode(this.refs.period).value;
     Meteor.call('addCourse', courseId, courseName, category, credit, period);
     ReactDOM.findDOMNode(this.refs.courseId).value = ''; ReactDOM.findDOMNode(this.refs.courseName).value = '';
     ReactDOM.findDOMNode(this.refs.category).value = '';

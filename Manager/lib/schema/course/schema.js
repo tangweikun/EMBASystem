@@ -14,7 +14,7 @@ Schemas.Course = new SimpleSchema({
     type: Number
   },
   period: {
-    type: Number
+    type: String
   }
 });
 Course = new Mongo.Collection('course');

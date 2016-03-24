@@ -21,3 +21,15 @@ FlowRouter.route('/showcourse', {
     ReactLayout.render(Layout, {content: <ShowCourse />})
   }
 });
+
+FlowRouter.route('/addteacher', {
+  action: function() {
+    ReactLayout.render(AddTeacher)
+  }
+});
+
+FlowRouter.route('/showteacher', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowTeacher />})
+  }
+});
