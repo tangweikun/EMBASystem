@@ -33,3 +33,9 @@ FlowRouter.route('/showteacher', {
     ReactLayout.render(Layout, {content: <ShowTeacher />})
   }
 });
+
+FlowRouter.route('/addclass', {
+  action: function() {
+    ReactLayout.render(AddTheClass)
+  }
+});
