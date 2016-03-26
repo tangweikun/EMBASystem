@@ -51,3 +51,9 @@ FlowRouter.route('/showshedule', {
     ReactLayout.render(Layout, {content: <ShowShedule />})
   }
 });
+
+FlowRouter.route('/addstudent', {
+  action: function() {
+    ReactLayout.render(AddStudent)
+  }
+});
