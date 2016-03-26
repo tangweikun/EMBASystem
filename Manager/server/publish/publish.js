@@ -5,3 +5,7 @@ Meteor.publish('course', function() {
 Meteor.publish('teacher', function() {
   return Teacher.find({});
 });
+
+Meteor.publish('shedule', function() {
+  return Shedule.find({});
+});
