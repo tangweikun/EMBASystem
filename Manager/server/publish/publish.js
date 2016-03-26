@@ -9,3 +9,7 @@ Meteor.publish('teacher', function() {
 Meteor.publish('shedule', function() {
   return Shedule.find({});
 });
+
+Meteor.publish('student', function() {
+  return Student.find({});
+});

@@ -6,7 +6,7 @@ FlowRouter.route('/', {
 
 FlowRouter.notFound = {
   action: function() {
-    ReactLayout.render(notFound)
+    ReactLayout.render(NotFound)
   }
 };
 
@@ -55,5 +55,11 @@ FlowRouter.route('/showshedule', {
 FlowRouter.route('/addstudent', {
   action: function() {
     ReactLayout.render(AddStudent)
+  }
+});
+
+FlowRouter.route('/showstudent', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowStudent />})
   }
 });
