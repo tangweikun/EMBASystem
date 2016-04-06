@@ -69,3 +69,9 @@ FlowRouter.route('/addmanager', {
     ReactLayout.render(AddManager)
   }
 });
+
+FlowRouter.route('/showmanager', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowManager />})
+  }
+});

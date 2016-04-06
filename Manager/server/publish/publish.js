@@ -13,3 +13,7 @@ Meteor.publish('shedule', function() {
 Meteor.publish('student', function() {
   return Student.find({});
 });
+
+Meteor.publish('users', function() {
+  return Meteor.users.find({});
+});
