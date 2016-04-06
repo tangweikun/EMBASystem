@@ -2,13 +2,10 @@ ShowStudent = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let sub = Meteor.subscribe('student');
-    let student = Student.find({}).fetch(); //需要选择
-    console.log("--->",student);
-
-
+    let sub = Meteor.subscribe("users");
+    let student = Meteor.users.find({roles: 'student'}).fetch()
     return {
-      student:sub.ready() ? student : null
+      student: sub.ready() ? student : null
     }
   },
 
