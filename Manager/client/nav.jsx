@@ -36,7 +36,7 @@ Nav = React.createClass({
     <Item title="报考" href="#" />
     <Item title="添加课程" href={FlowRouter.path('/addcourse')} />
     <Item title="添加教师" href={FlowRouter.path('/addteacher')} />
-    <Item title="添加班级" href={FlowRouter.path('/addtheclass')} />
+    <Item title="添加班级" href={FlowRouter.path('/addclass')} />
     <Item title="添加学员" href={FlowRouter.path('/addstudent')} />
     <Item title="添加培养计划" href={FlowRouter.path('/addtrainngplan')} />
     <Item title="添加课程表" href={FlowRouter.path('/addshedule')} />
