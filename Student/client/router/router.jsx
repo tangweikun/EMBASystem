@@ -9,3 +9,9 @@ FlowRouter.notFound = {
     ReactLayout.render(NotFound)
   }
 };
+
+FlowRouter.route('/login', {
+  action: function() {
+    ReactLayout.render(Login)
+  }
+});
