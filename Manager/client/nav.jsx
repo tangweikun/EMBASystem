@@ -22,7 +22,6 @@ Nav = React.createClass({
     <Item title="添加活动成绩" href={FlowRouter.path('addactivityscore')} />
     <Item title="添加讲座成绩" href={FlowRouter.path('addlecturescore')} />
     <ItemHead title="查询入口" />
-    <Item title="培养计划" href="#" />
     <Item title="课程" href={FlowRouter.path('/showcourse')} />
     <Item title="教师" href={FlowRouter.path('/showteacher')} />
     <Item title="班级" href={FlowRouter.path('/showtheclass')} />
