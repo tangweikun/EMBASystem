@@ -17,10 +17,22 @@ Schemas.Schedule = new SimpleSchema({
     type: String
   },
   className: {
-    type: String
+    type: Object,
+    optional: true
   },
   where: {
     type: String
+  },
+  semester: {
+    type: String
+  },
+  studentList: {
+    type: Object,
+    optional: true
+  },
+  contact: {
+    type: Object,
+    optional: true
   }
 });
 Schedule = new Mongo.Collection('schedule');
