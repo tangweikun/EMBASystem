@@ -15,3 +15,9 @@ FlowRouter.route('/login', {
     ReactLayout.render(Login)
   }
 });
+
+FlowRouter.route('/shedule', {
+  action: function() {
+    ReactLayout.render(ShowShedule)
+  }
+});

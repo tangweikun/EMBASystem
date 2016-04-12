@@ -22,10 +22,10 @@ Nav = React.createClass({
     <Item title="活动" href={FlowRouter.path('/showactivity')} />
     <Item title="讲座" href="#" />
     <ItemHead title="基础信息" />
-    <Item title="课程表" href={FlowRouter.path('/showcourse')} />
+    <Item title="课程表" href={FlowRouter.path('/shedule')} />
     <Item title="教师" href={FlowRouter.path('/showteacher')} />
     <Item title="班级" href={FlowRouter.path('/showclass')} />
-    <Item title="培养计划" href={FlowRouter.path('/showstudent')} />
+    <Item title="培养计划" href={FlowRouter.path('/trainngplan')} />
     <Item title="选课" href="#" />
 </div>
     )
