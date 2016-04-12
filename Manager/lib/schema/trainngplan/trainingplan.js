@@ -15,6 +15,12 @@ Schemas.TrainingPlan = new SimpleSchema({
   },
   period: {
     type: String
+  },
+  evaluationMode: {
+    type: String
+  },
+  annual: {
+    type: String
   }
 });
 TrainingPlan = new Mongo.Collection('trainingPlan');

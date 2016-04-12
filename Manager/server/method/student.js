@@ -11,6 +11,7 @@ Meteor.methods({
     let queryField = 'username'
     query[queryField] = studentId
     let roles = 'student'
+    let state = "在校"
     let updateData = {
       profile: {
         studentId: studentId,
@@ -28,6 +29,7 @@ Meteor.methods({
         category: category,
         area: area,
       },
+      state: state,
       roles: roles,
     }
     Meteor.users.update(query, {$set: updateData}, {upsert: true})

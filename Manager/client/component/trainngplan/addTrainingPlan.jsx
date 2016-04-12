@@ -6,10 +6,14 @@ AddTrainingPlan = React.createClass({
     category = ReactDOM.findDOMNode(this.refs.category).value,
     credit = ReactDOM.findDOMNode(this.refs.credit).value,
     period = ReactDOM.findDOMNode(this.refs.period).value;
-    Meteor.call('addTrainingPlan', courseId, courseName, category, credit, period);
+    evaluationMode = ReactDOM.findDOMNode(this.refs.evaluationMode).value,
+    annual = ReactDOM.findDOMNode(this.refs.annual).value;
+    Meteor.call('addTrainingPlan', courseId, courseName, category, credit, period, evaluationMode, annual);
     ReactDOM.findDOMNode(this.refs.courseId).value = ''; ReactDOM.findDOMNode(this.refs.courseName).value = '';
     ReactDOM.findDOMNode(this.refs.category).value = '';
     ReactDOM.findDOMNode(this.refs.credit).value = ''; ReactDOM.findDOMNode(this.refs.period).value = '';
+    ReactDOM.findDOMNode(this.refs.evaluationMode).value = '';
+    ReactDOM.findDOMNode(this.refs.annual).value = '';
   },
 
   render() {
@@ -54,6 +58,22 @@ AddTrainingPlan = React.createClass({
         </div>
         <div className="col-md-4">
           <input type="text" ref="period" />
+        </div>
+        </div>
+        <div className="row">
+        <div className="col-md-4">
+          <label>考核方式</label>
+        </div>
+        <div className="col-md-4">
+          <input type="text" ref="evaluationMode" />
+        </div>
+        </div>
+        <div className="row">
+        <div className="col-md-4">
+          <label>年份</label>
+        </div>
+        <div className="col-md-4">
+          <input type="text" ref="annual" />
         </div>
         </div>
         <div calssName="row">
