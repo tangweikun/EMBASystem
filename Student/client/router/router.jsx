@@ -16,8 +16,8 @@ FlowRouter.route('/login', {
   }
 });
 
-FlowRouter.route('/shedule', {
+FlowRouter.route('/schedule', {
   action: function() {
-    ReactLayout.render(ShowShedule)
+    ReactLayout.render(ShowSchedule)
   }
 });

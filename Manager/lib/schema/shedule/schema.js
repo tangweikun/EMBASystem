@@ -1,6 +1,6 @@
 let Schemas = {};
-Schemas.Shedule = new SimpleSchema({
-  sheduleId: {
+Schemas.Schedule = new SimpleSchema({
+  scheduleId: {
     type: String,
     optional: true
   },
@@ -23,5 +23,5 @@ Schemas.Shedule = new SimpleSchema({
     type: String
   }
 });
-Shedule = new Mongo.Collection('shedule');
-Shedule.attachSchema(Schemas.Shedule);
+Schedule = new Mongo.Collection('schedule');
+Schedule.attachSchema(Schemas.Schedule);

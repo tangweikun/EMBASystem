@@ -1,7 +1,7 @@
 Meteor.methods({
-  addShedule: function(sheduleId, when, courseName, teacherName, teacherOrganization, className, where) {
-    Shedule.insert({
-      sheduleId: sheduleId,
+  addSchedule: function(scheduleId, when, courseName, teacherName, teacherOrganization, className, where) {
+    Schedule.insert({
+      scheduleId: scheduleId,
       when: when,
       courseName: courseName,
       teacherName: teacherName,

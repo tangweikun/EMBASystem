@@ -1,15 +1,15 @@
-AddShedule = React.createClass({
+AddSchedule = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
-    let sheduleId = ReactDOM.findDOMNode(this.refs.sheduleId).value, when = ReactDOM.findDOMNode(this.refs.when).value,
+    let scheduleId = ReactDOM.findDOMNode(this.refs.scheduleId).value, when = ReactDOM.findDOMNode(this.refs.when).value,
     courseName = ReactDOM.findDOMNode(this.refs.courseName).value,
     teacherName = ReactDOM.findDOMNode(this.refs.teacherName).value,
     teacherOrganization = ReactDOM.findDOMNode(this.refs.teacherOrganization).value,
     className = ReactDOM.findDOMNode(this.refs.className).value,
     where = ReactDOM.findDOMNode(this.refs.where).value;
-    Meteor.call('addShedule', sheduleId, when, courseName, teacherName, teacherOrganization, className, where);
-    ReactDOM.findDOMNode(this.refs.sheduleId).value = ''; ReactDOM.findDOMNode(this.refs.when).value = '';
+    Meteor.call('addSchedule', scheduleId, when, courseName, teacherName, teacherOrganization, className, where);
+    ReactDOM.findDOMNode(this.refs.scheduleId).value = ''; ReactDOM.findDOMNode(this.refs.when).value = '';
     ReactDOM.findDOMNode(this.refs.courseName).value = '';
     ReactDOM.findDOMNode(this.refs.teacherName).value = '';
     ReactDOM.findDOMNode(this.refs.teacherOrganization).value = '';
@@ -26,7 +26,7 @@ AddShedule = React.createClass({
           <label>序号</label>
         </div>
         <div className="col-md-4">
-          <input type="text" ref="sheduleId" />
+          <input type="text" ref="scheduleId" />
         </div>
         </div>
         <div className="row">

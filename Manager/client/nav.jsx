@@ -26,8 +26,8 @@ Nav = React.createClass({
     <Item title="教师" href={FlowRouter.path('/showteacher')} />
     <Item title="班级" href={FlowRouter.path('/showtheclass')} />
     <Item title="学员" href={FlowRouter.path('/showstudent')} />
-    <Item title="培养计划" href={FlowRouter.path('/showtrainngplan')} />
-    <Item title="课程表" href={FlowRouter.path('/showshedule')} />
+    <Item title="培养计划" href={FlowRouter.path('/showtrainingplan')} />
+    <Item title="课程表" href={FlowRouter.path('/showschedule')} />
     <Item title="管理员" href={FlowRouter.path('/showmanager')} />
     <Item title="活动" href={FlowRouter.path('/showactivity')} />
     <Item title="讲座" href={FlowRouter.path('/showlecture')} />
@@ -37,8 +37,8 @@ Nav = React.createClass({
     <Item title="添加教师" href={FlowRouter.path('/addteacher')} />
     <Item title="添加班级" href={FlowRouter.path('/addclass')} />
     <Item title="添加学员" href={FlowRouter.path('/addstudent')} />
-    <Item title="添加培养计划" href={FlowRouter.path('/addtrainngplan')} />
-    <Item title="添加课程表" href={FlowRouter.path('/addshedule')} />
+    <Item title="添加培养计划" href={FlowRouter.path('/addtrainingplan')} />
+    <Item title="添加课程表" href={FlowRouter.path('/addschedule')} />
     <Item title="添加管理员" href={FlowRouter.path('/addmanager')} />
     <Item title="添加活动" href={FlowRouter.path('/addactivity')} />
     <Item title="添加讲座" href={FlowRouter.path('/addlecture')} />

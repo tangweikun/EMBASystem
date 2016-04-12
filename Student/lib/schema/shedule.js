@@ -1,1 +1,1 @@
-Shedule = new Mongo.Collection('shedule');
+Schedule = new Mongo.Collection('schedule');

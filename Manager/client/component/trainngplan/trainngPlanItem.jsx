@@ -1,4 +1,4 @@
-TrainngPlanItem = React.createClass({
+TrainingPlanItem = React.createClass({
   render() {
     return (
       <div className="col-md-9">

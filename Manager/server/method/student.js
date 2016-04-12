@@ -12,20 +12,22 @@ Meteor.methods({
     query[queryField] = studentId
     let roles = 'student'
     let updateData = {
-      studentId: studentId,
-      studentName: studentName,
-      gender: gender,
-      IDNumber: IDNumber,
-      nation: nation,
-      politicalLandscape: politicalLandscape,
-      company: company,
-      position: position,
-      postalAdress: postalAdress,
-      postcode: postcode,
-      admissionDate: admissionDate,
-      theClass: theClass,
-      category: category,
-      area: area,
+      profile: {
+        studentId: studentId,
+        studentName: studentName,
+        gender: gender,
+        IDNumber: IDNumber,
+        nation: nation,
+        politicalLandscape: politicalLandscape,
+        company: company,
+        position: position,
+        postalAdress: postalAdress,
+        postcode: postcode,
+        admissionDate: admissionDate,
+        theClass: theClass,
+        category: category,
+        area: area,
+      },
       roles: roles,
     }
     Meteor.users.update(query, {$set: updateData}, {upsert: true})

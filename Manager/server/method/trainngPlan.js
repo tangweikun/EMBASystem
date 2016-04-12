@@ -1,6 +1,6 @@
 Meteor.methods({
-  addTrainngPlan: function(courseId, courseName, category, credit, period) {
-    TrainngPlan.insert({
+  addTrainingPlan: function(courseId, courseName, category, credit, period) {
+    TrainingPlan.insert({
       courseId: courseId,
       courseName: courseName,
       category: category,

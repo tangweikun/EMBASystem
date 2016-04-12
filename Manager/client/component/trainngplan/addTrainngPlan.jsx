@@ -1,4 +1,4 @@
-AddTrainngPlan = React.createClass({
+AddTrainingPlan = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
@@ -6,7 +6,7 @@ AddTrainngPlan = React.createClass({
     category = ReactDOM.findDOMNode(this.refs.category).value,
     credit = ReactDOM.findDOMNode(this.refs.credit).value,
     period = ReactDOM.findDOMNode(this.refs.period).value;
-    Meteor.call('addTrainngPlan', courseId, courseName, category, credit, period);
+    Meteor.call('addTrainingPlan', courseId, courseName, category, credit, period);
     ReactDOM.findDOMNode(this.refs.courseId).value = ''; ReactDOM.findDOMNode(this.refs.courseName).value = '';
     ReactDOM.findDOMNode(this.refs.category).value = '';
     ReactDOM.findDOMNode(this.refs.credit).value = ''; ReactDOM.findDOMNode(this.refs.period).value = '';

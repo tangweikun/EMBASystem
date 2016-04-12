@@ -1,18 +1,18 @@
-ShowShedule = React.createClass({
+ShowSchedule = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let sub = Meteor.subscribe('shedule');
-    let shedule = Shedule.find({}).fetch();
+    let sub = Meteor.subscribe('schedule');
+    let schedule = Schedule.find({}).fetch();
 
     return {
-      shedule:sub.ready() ? shedule : null
+      schedule:sub.ready() ? schedule : null
     }
   },
 
   rendercourse() {
-    return this.data.shedule ? this.data.shedule.map(function(a,n){
-      return <SheduleItem shedule={a} key={n} />
+    return this.data.schedule ? this.data.schedule.map(function(a,n){
+      return <ScheduleItem schedule={a} key={n} />
     }) : null
   },
 

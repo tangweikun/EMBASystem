@@ -1,9 +1,9 @@
-ShowTrainngPlan = React.createClass({
+ShowTrainingPlan = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let sub = Meteor.subscribe('trainngPlan');
-    let course = TrainngPlan.find({}).fetch();
+    let sub = Meteor.subscribe('trainingPlan');
+    let course = TrainingPlan.find({}).fetch();
 
     return {
       course:sub.ready() ? course : null
@@ -12,7 +12,7 @@ ShowTrainngPlan = React.createClass({
 
   rendercourse() {
     return this.data.course ? this.data.course.map(function(a,n){
-      return <TrainngPlanItem course={a} key={n} />
+      return <TrainingPlanItem course={a} key={n} />
     }) : null
   },
 

@@ -1,5 +1,5 @@
 let Schemas = {};
-Schemas.TrainngPlan = new SimpleSchema({
+Schemas.TrainingPlan = new SimpleSchema({
   courseId: {
     type: String,
     optional: true
@@ -17,5 +17,5 @@ Schemas.TrainngPlan = new SimpleSchema({
     type: String
   }
 });
-TrainngPlan = new Mongo.Collection('trainngPlan');
-TrainngPlan.attachSchema(Schemas.TrainngPlan);
+TrainingPlan = new Mongo.Collection('trainingPlan');
+TrainingPlan.attachSchema(Schemas.TrainingPlan);

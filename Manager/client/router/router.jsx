@@ -22,15 +22,15 @@ FlowRouter.route('/showcourse', {
   }
 });
 
-FlowRouter.route('/addtrainngplan', {
+FlowRouter.route('/addtrainingplan', {
   action: function() {
-    ReactLayout.render(AddTrainngPlan)
+    ReactLayout.render(AddTrainingPlan)
   }
 });
 
-FlowRouter.route('/showtrainngplan', {
+FlowRouter.route('/showtrainingplan', {
   action: function() {
-    ReactLayout.render(Layout, {content: <ShowTrainngPlan />})
+    ReactLayout.render(Layout, {content: <ShowTrainingPlan />})
   }
 });
 
@@ -52,15 +52,15 @@ FlowRouter.route('/addclass', {
   }
 });
 
-FlowRouter.route('/addshedule', {
+FlowRouter.route('/addschedule', {
   action: function() {
-    ReactLayout.render(AddShedule)
+    ReactLayout.render(Addschedule)
   }
 });
 
-FlowRouter.route('/showshedule', {
+FlowRouter.route('/showschedule', {
   action: function() {
-    ReactLayout.render(Layout, {content: <ShowShedule />})
+    ReactLayout.render(Layout, {content: <ShowSchedule />})
   }
 });
 
