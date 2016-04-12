@@ -7,6 +7,23 @@ Schemas.TheClass = new SimpleSchema({
   className: {
     type: String
   },
+  annual: {
+    type: String
+  },
+  diretor: {
+    type: String,
+    optional: true
+  },
+  date: {
+    type: String
+  },
+  state: {
+    type: String
+  },
+  monitor: {
+    type: String,
+    optional: true
+  },
   studentList: {
     type: Object,
     optional: true
