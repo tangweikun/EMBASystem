@@ -54,7 +54,7 @@ FlowRouter.route('/addclass', {
 
 FlowRouter.route('/addschedule', {
   action: function() {
-    ReactLayout.render(Addschedule)
+    ReactLayout.render(AddSchedule)
   }
 });
 

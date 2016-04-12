@@ -4,24 +4,12 @@ Schemas.Schedule = new SimpleSchema({
     type: String,
     optional: true
   },
-  when: {
-    type: String
-  },
   courseName: {
     type: String
   },
-  teacherName: {
-    type: String
-  },
-  teacherOrganization: {
-    type: String
-  },
-  className: {
+  details: {
     type: Object,
     optional: true
-  },
-  where: {
-    type: String
   },
   semester: {
     type: String
@@ -36,4 +24,4 @@ Schemas.Schedule = new SimpleSchema({
   }
 });
 Schedule = new Mongo.Collection('schedule');
-Schedule.attachSchema(Schemas.Schedule);
+// Schedule.attachSchema(Schemas.Schedule);

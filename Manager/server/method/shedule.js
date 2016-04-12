@@ -10,17 +10,27 @@ Meteor.methods({
   //     where: where,
   //   })
   // }
-  addSchedule: function(scheduleId, when, courseName, teacherName, teacherOrganization, className, where) {
-    Schedule.update({scheduleId: scheduleId},
-    { $set: {
+  addSchedule: function(scheduleId, when, courseName, teacherName, teacherOrganization, className, where, semester) {
+  let students = Meteor.users.find({"profile.theClass" : className}).fetch()
+  let count = Meteor.users.find({"profile.theClass" : className}).count()
+  let studentId = []
+  if (count > 0) {
+    for (let i = 0; i < count; i++) {
+      studentId.push(students[i].profile.studentId)
+    }
+  }
+  let details = {
     when: when,
-    courseName: courseName,
-    teacherName: teacherName,
-    teacherOrganization: teacherOrganization,
     where: where,
-    semester: semester
-    }},{upsert: true}
-    )
-    Schedule.update({scheduleId: scheduleId}, {$push: {className: className}}, {upsert: true})
+    teacherName: teacherName,
+    className: className,
+    teacherOrganization: teacherOrganization,
+  }
+  let studentList = {
+    studentId: studentId,
+  }
+  Schedule.update({scheduleId: scheduleId, courseName: courseName, semester: semester }, {upsert: true})
+  Schedule.update({scheduleId: scheduleId},{ $push: { details: details }}, {upsert: true})
+  Schedule.update({scheduleId: scheduleId},{ $push: { studentList: studentList }}, {upsert: true})
   }
 });
