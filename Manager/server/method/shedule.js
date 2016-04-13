@@ -37,7 +37,8 @@ Meteor.methods({
     studentId: studentId,
   }
   // Schedule.update({scheduleId: scheduleId, courseName: courseName, semester: semester }, {upsert: true})
-  Schedule.update({scheduleId: scheduleId},{ $push: { details: details }}, {upsert: true})
+
+  Schedule.update({scheduleId: scheduleId, courseName: courseName},{ $push: { details: details }}, {upsert: true})
   Schedule.update({scheduleId: scheduleId},{ $push: { studentList: studentId }}, {upsert: true})
 },
 
