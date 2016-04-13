@@ -80,5 +80,33 @@ Meteor.methods({
       list[i] = all[i].deleteEle()
       console.log("studentList---->>>>",list);
     }
+  },
+
+  show: function() {
+    Array.prototype.deleteEle = function () {
+                var o = {}, newArr = [], i, j;
+                for (i = 0; i < this.length; i++) {
+                    if (typeof (o[this[i]]) == "undefined") {
+                        o[this[i]] = "";
+                    }
+                }
+                for (j in o) {
+                    newArr.push(j)
+                }
+                return newArr;
+            }
+    let oneSchedule
+    let studentList
+    let groupNum
+    let all = []
+    oneSchedule = Schedule.findOne({scheduleId: '004'})
+    studentList = oneSchedule.studentList
+    groupNum = studentList.length
+    for (let i = 0; i < groupNum; i++) {
+      all = [...all, ...studentList[i]]
+    }
+    let list = all.deleteEle()
+    console.log(">>>>>>>",list);
+
   }
 });

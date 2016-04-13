@@ -36,26 +36,27 @@ Meteor.methods({
     Meteor.users.update(query, {$set: updateData}, {upsert: true})
   },
 
-  addScore: function( studentId, theClass ) {
+  addScore: function( studentId, theClass, studentName) {
     let tp = TrainingPlan.find({}).fetch()
     let courseList = []
     let all = []
-    for (let i =0; i < tp.length; i ++) {
-      let trainingPlan = {
+    let key
+    let trainingPlan = {}
+    for (let i = 0; i < tp.length; i++) {
+      let courseInfo = {
         courseName: '',
         state: "未修",
         status: "不可选",
       }
-      courseList.push(tp[i].courseName)
-      trainingPlan.courseName = courseList[i]
-      all.push(trainingPlan)
+      courseInfo.courseName = tp[i].courseName
+      key = tp[i].courseId
+      trainingPlan[key] = courseInfo
     }
-
     Score.insert({
       studentId: studentId,
       className: theClass,
-      trainingPlan: all
+      studentName: studentName,
+      trainingPlan: trainingPlan
     })
   }
-
 });

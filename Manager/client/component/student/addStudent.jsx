@@ -15,7 +15,7 @@ AddStudent = React.createClass({
     annual = ReactDOM.findDOMNode(this.refs.annual).value.trim();
 
     Meteor.call('addStudent', studentId, studentName, gender, IDNumber, nation, politicalLandscape, company, position, postalAdress, postcode, admissionDate, theClass, category, area, annual);
-    Meteor.call('addScore', studentId, theClass)
+    Meteor.call('addScore', studentId, theClass, studentName)
 
     ReactDOM.findDOMNode(this.refs.studentId).value = ''; ReactDOM.findDOMNode(this.refs.studentName).value = ''; ReactDOM.findDOMNode(this.refs.gender).value = ''; ReactDOM.findDOMNode(this.refs.IDNumber).value = ''; ReactDOM.findDOMNode(this.refs.nation).value = '';
     ReactDOM.findDOMNode(this.refs.politicalLandscape).value = ''; ReactDOM.findDOMNode(this.refs.company).value = ''; ReactDOM.findDOMNode(this.refs.position).value = ''; ReactDOM.findDOMNode(this.refs.postalAdress).value = ''; ReactDOM.findDOMNode(this.refs.postcode).value = '';

@@ -21,3 +21,7 @@ Meteor.publish('student', function() {
 Meteor.publish('users', function() {
   return Meteor.users.find({});
 });
+
+Meteor.publish('score', function() {
+  return Score.find({});
+});

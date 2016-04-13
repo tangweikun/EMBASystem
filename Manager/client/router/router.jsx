@@ -87,3 +87,9 @@ FlowRouter.route('/showmanager', {
     ReactLayout.render(Layout, {content: <ShowManager />})
   }
 });
+
+FlowRouter.route('/addscore', {
+  action: function() {
+    ReactLayout.render(AddScore)
+  }
+});
