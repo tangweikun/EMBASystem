@@ -16,12 +16,13 @@ Meteor.methods({
   let studentId = []
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      let stu = {
-        studentId: students[i].profile.studentId,
-        studentName: students[i].profile.studentName,
-        className: students[i].profile.theClass,
-      }
-      studentId.push(stu)
+      studentId.push(students[i].profile.studentId)
+      // let stu = {
+      //   studentId: students[i].profile.studentId,
+      //   studentName: students[i].profile.studentName,
+      //   className: students[i].profile.theClass,
+      // }
+      // studentId.push(stu)
     }
   }
   let details = {
