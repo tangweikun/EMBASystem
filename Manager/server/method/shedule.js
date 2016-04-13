@@ -20,16 +20,18 @@ Meteor.methods({
     }
   }
   let details = {
+    courseName: courseName,
     when: when,
     where: where,
     teacherName: teacherName,
     className: className,
     teacherOrganization: teacherOrganization,
+    semester: semester
   }
   let studentList = {
     studentId: studentId,
   }
-  Schedule.update({scheduleId: scheduleId, courseName: courseName, semester: semester }, {upsert: true})
+  // Schedule.update({scheduleId: scheduleId, courseName: courseName, semester: semester }, {upsert: true})
   Schedule.update({scheduleId: scheduleId},{ $push: { details: details }}, {upsert: true})
   Schedule.update({scheduleId: scheduleId},{ $push: { studentList: studentList }}, {upsert: true})
   }
