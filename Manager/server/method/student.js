@@ -1,5 +1,5 @@
 Meteor.methods({
-  addStudent: function(studentId, studentName, gender, IDNumber, nation, politicalLandscape, company, position, postalAdress, postcode, admissionDate, theClass, category, area) {
+  addStudent: function(studentId, studentName, gender, IDNumber, nation, politicalLandscape, company, position, postalAdress, postcode, admissionDate, theClass, category, area, annual) {
 
     let userData = {
       username: studentId,
@@ -28,10 +28,34 @@ Meteor.methods({
         theClass: theClass,
         category: category,
         area: area,
+        annual: annual,
       },
       state: state,
       roles: roles,
     }
     Meteor.users.update(query, {$set: updateData}, {upsert: true})
+  },
+
+  addScore: function( studentId, theClass ) {
+    let tp = TrainingPlan.find({}).fetch()
+    let courseList = []
+    let all = []
+    for (let i =0; i < tp.length; i ++) {
+      let trainingPlan = {
+        courseName: '',
+        state: "未修",
+        status: "不可选",
+      }
+      courseList.push(tp[i].courseName)
+      trainingPlan.courseName = courseList[i]
+      all.push(trainingPlan)
+    }
+
+    Score.insert({
+      studentId: studentId,
+      className: theClass,
+      trainingPlan: all
+    })
   }
+
 });

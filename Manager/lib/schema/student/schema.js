@@ -44,4 +44,4 @@ Schemas.Student = new SimpleSchema({
   }
 });
 Student = new Mongo.Collection('student');
-Student.attachSchema(Schemas.Student);
+// Student.attachSchema(Schemas.Student);
