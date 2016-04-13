@@ -9,7 +9,8 @@ AddSchedule = React.createClass({
     className = ReactDOM.findDOMNode(this.refs.className).value,
     where = ReactDOM.findDOMNode(this.refs.where).value;
     semester = ReactDOM.findDOMNode(this.refs.semester).value;
-    Meteor.call('addSchedule', scheduleId, when, courseName, teacherName, teacherOrganization, className, where, semester);
+    courseId = ReactDOM.findDOMNode(this.refs.courseId).value;
+    Meteor.call('addSchedule', scheduleId, when, courseName, teacherName, teacherOrganization, className, where, semester,courseId);
     ReactDOM.findDOMNode(this.refs.scheduleId).value = ''; ReactDOM.findDOMNode(this.refs.when).value = '';
     ReactDOM.findDOMNode(this.refs.courseName).value = '';
     ReactDOM.findDOMNode(this.refs.teacherName).value = '';
@@ -17,6 +18,7 @@ AddSchedule = React.createClass({
     ReactDOM.findDOMNode(this.refs.className).value = '';
     ReactDOM.findDOMNode(this.refs.where).value = '';
     ReactDOM.findDOMNode(this.refs.semester).value = '';
+    ReactDOM.findDOMNode(this.refs.courseId).value = '';
   },
 
   render() {
@@ -45,6 +47,14 @@ AddSchedule = React.createClass({
         </div>
         <div className="col-md-4">
           <input type="text" ref="courseName" />
+        </div>
+        </div>
+        <div className="row">
+        <div className="col-md-4">
+          <label>课程编号</label>
+        </div>
+        <div className="col-md-4">
+          <input type="text" ref="courseId" />
         </div>
         </div>
         <div className="row">

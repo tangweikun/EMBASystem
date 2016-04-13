@@ -16,7 +16,7 @@ ScoreItem = React.createClass({
     if (!this.data.isReady) {
       return <div></div>
     }
-    let m = 'EM10J002'
+    let m = this.props.courseId
     console.log("000",m);
     console.log("message",this.data.score);
     console.log("----",this.data.score ? this.data.score.className : '222');
