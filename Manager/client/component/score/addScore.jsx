@@ -6,7 +6,7 @@ AddScore = React.createClass({
     let sub2 = Meteor.subscribe('schedule')
     let score = Score.find({}).fetch()
     let schedule = Schedule.find({}).fetch()
-    let oneSchedule = Schedule.findOne({courseName: '电子商务'})
+    let oneSchedule = Schedule.findOne({courseName: this.props.courseName})
     return {
       score: sub1.ready() ? score : null,
       schedule: sub2.ready() ? schedule : null,
@@ -31,7 +31,16 @@ AddScore = React.createClass({
     let studentList
     let groupNum
     let all = []
-    oneSchedule = this.data.oneSchedule
+    let courseName
+    let courseId
+    if (this.data.oneSchedule) {
+      oneSchedule = this.data.oneSchedule
+      courseId = oneSchedule.courseId
+      courseName = oneSchedule.courseName
+      console.log("////---",oneSchedule,courseName);
+    }
+
+
     studentList = oneSchedule ? oneSchedule.studentList : ''
     groupNum = studentList.length
     for (let i = 0; i < groupNum; i++) {
@@ -42,7 +51,7 @@ AddScore = React.createClass({
     console.log(">>>>>>>",list);
 
     return list.length > 0 ? list.map(function(a,n){
-      return <ScoreItem courseName="电子商务"  key={n} studentId={a} />
+      return <ScoreItem courseId={courseId}  key={n} studentId={a} courseName={courseName} />
     }) : null
 
   },

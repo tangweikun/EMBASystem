@@ -93,3 +93,9 @@ FlowRouter.route('/addscore', {
     ReactLayout.render(AddScore)
   }
 });
+
+FlowRouter.route('/showscore', {
+  action: function() {
+    ReactLayout.render(ShowScore)
+  }
+});
