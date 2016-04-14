@@ -36,8 +36,8 @@ Meteor.methods({
     Meteor.users.update(query, {$set: updateData}, {upsert: true})
   },
 
-  addScore: function( studentId, theClass, studentName) {
-    let tp = TrainingPlan.find({}).fetch()
+  addScore: function( studentId, theClass, studentName, annual) {
+    let tp = TrainingPlan.find({annual: annual}).fetch()
     let courseList = []
     let all = []
     let key
