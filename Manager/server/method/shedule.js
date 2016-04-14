@@ -108,5 +108,49 @@ Meteor.methods({
     let list = all.deleteEle()
     console.log(">>>>>>>",list);
 
+  },
+
+
+//每次在课程表中（schedule）添加一个课程时，调用changeState方法改变该班级里的每个state为“未修”的学生的state为“学习中”，status为“不可选”
+  changeState: function(courseName, className, courseId) {
+    let state
+    let status
+    let trainingPlan = {}
+    let query = {}
+    let key1 = `trainingPlan.${courseId}.state`
+    let key2 = `trainingPlan.${courseId}.status`
+    console.log("111",key1,key2);
+     query[key1] = '未修'
+     query.className = className
+    let $set = {}
+    $set[key1] = '学习中'
+    $set[key2] = '不可选'
+    console.log("message",$set);
+    console.log("----", query);
+    // let tt = Score.find()
+    Score.update( query, {$set: $set},{multi: true})
+  },
+
+
+//每次在课程表中（schedule）添加一个课程时，调用changeState方法改变其他在校班级里的每个state为“未修”的学生的status为“可选”
+  changeState2: function(courseName, className, courseId) {
+    let state
+    let status
+    let trainingPlan = {}
+    let query = {}
+    let key1 = `trainingPlan.${courseId}.state`
+    let key2 = `trainingPlan.${courseId}.status`
+    console.log("111",key1,key2);
+     query[key1] = '未修'
+     let neClassName = {}
+     neClassName.$ne = className
+     query.className = neClassName
+
+    let $set = {}
+    $set[key2] = '可选'
+    console.log("message",$set);
+    console.log("----", query);
+    Score.update( query, {$set: $set},{multi: true})
   }
+
 });

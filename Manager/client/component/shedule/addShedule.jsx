@@ -11,6 +11,10 @@ AddSchedule = React.createClass({
     semester = ReactDOM.findDOMNode(this.refs.semester).value;
     courseId = ReactDOM.findDOMNode(this.refs.courseId).value;
     Meteor.call('addSchedule', scheduleId, when, courseName, teacherName, teacherOrganization, className, where, semester,courseId);
+//改变score中的state和status
+    Meteor.call('changeState',courseName, className, courseId)
+    Meteor.call('changeState2',courseName, className, courseId)
+
     ReactDOM.findDOMNode(this.refs.scheduleId).value = ''; ReactDOM.findDOMNode(this.refs.when).value = '';
     ReactDOM.findDOMNode(this.refs.courseName).value = '';
     ReactDOM.findDOMNode(this.refs.teacherName).value = '';
