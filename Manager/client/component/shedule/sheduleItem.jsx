@@ -2,7 +2,7 @@ ScheduleItem = React.createClass({
   render() {
     return (
       <div className="col-md-9">
-          <div className="col-md-1">{this.props.schedule.scheduleId}</div>
+          <div className="col-md-1">{this.props.schedule.courseId}</div>
           <div className="col-md-1">{this.props.schedule.when}</div>
           <div className="col-md-1">{this.props.schedule.courseName}</div>
           <div className="col-md-1">{this.props.schedule.teacherName}</div>

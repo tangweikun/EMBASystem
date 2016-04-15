@@ -26,6 +26,7 @@ Meteor.methods({
     }
   }
   let details = {
+    scheduleId: scheduleId,
     courseName: courseName,
     when: when,
     where: where,
@@ -40,7 +41,7 @@ Meteor.methods({
   }
   // Schedule.update({scheduleId: scheduleId, courseName: courseName, semester: semester }, {upsert: true})
 
-  Schedule.update({scheduleId: scheduleId, courseName: courseName, courseId: courseId, semester: semester},{ $push: { details: details }}, {upsert: true})
+  Schedule.update({ courseName: courseName, courseId: courseId, semester: semester},{ $push: { details: details }}, {upsert: true})
   // Schedule.update({scheduleId: scheduleId},{ $push: { studentList: studentId }}, {upsert: true})
 },
 
@@ -69,7 +70,7 @@ Meteor.methods({
     schedule = Schedule.find({}).fetch()
     courseNum = schedule.length
     for (let i = 0; i < courseNum; i++) {
-      console.log("scheduleId--->", schedule[i].scheduleId);
+      console.log("scheduleId--->", schedule[i].courseId);
       count = ''
       studentList = schedule[i].studentList
       count = studentList.length
@@ -100,7 +101,7 @@ Meteor.methods({
     let studentList
     let groupNum
     let all = []
-    oneSchedule = Schedule.findOne({scheduleId: '004'})
+    oneSchedule = Schedule.findOne({courseId: '004'})
     studentList = oneSchedule.studentList
     groupNum = studentList.length
     for (let i = 0; i < groupNum; i++) {
