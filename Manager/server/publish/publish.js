@@ -25,3 +25,7 @@ Meteor.publish('users', function() {
 Meteor.publish('score', function() {
   return Score.find({});
 });
+
+Meteor.publish('commit', function() {
+  return Commit.find({});
+});

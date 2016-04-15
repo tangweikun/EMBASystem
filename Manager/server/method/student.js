@@ -49,7 +49,7 @@ Meteor.methods({
         courseName: '',
         state: "未修",
         status: "不可选",
-        courseId: courseId
+        courseId: courseId,
         details: details,
       }
       courseInfo.courseName = tp[i].courseName

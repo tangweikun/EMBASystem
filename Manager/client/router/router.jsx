@@ -99,3 +99,9 @@ FlowRouter.route('/showscore', {
     ReactLayout.render(ShowScore)
   }
 });
+
+FlowRouter.route('/showcommit', {
+  action: function() {
+    ReactLayout.render(ShowCommit)
+  }
+});

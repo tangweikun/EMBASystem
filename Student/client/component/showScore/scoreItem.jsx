@@ -11,7 +11,7 @@ ScoreItem = React.createClass({
       console.log("message",commit);
 
       state = commit ? commit.state : ''
-      if (state == '申请中' || state == '已拒绝') {
+      if (state == '申请中' || state == '拒绝') {
         disabled = 'disabled'
       }
     }
