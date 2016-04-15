@@ -29,6 +29,7 @@ AddScore = React.createClass({
             }
     let oneSchedule
     let studentList
+    let details
     let groupNum
     let all = []
     let courseName
@@ -41,12 +42,20 @@ AddScore = React.createClass({
     }
 
 
-    studentList = oneSchedule ? oneSchedule.studentList : ''
-    groupNum = studentList.length
+    details = oneSchedule ? oneSchedule.details : ''
+    groupNum = details.length
     for (let i = 0; i < groupNum; i++) {
-      all = [...all, ...studentList[i]]
+      all = [...all, ...details[i].studentList]
     }
     let list = all.deleteEle()
+
+
+    // studentList = oneSchedule ? oneSchedule.studentList : ''
+    // groupNum = studentList.length
+    // for (let i = 0; i < groupNum; i++) {
+    //   all = [...all, ...studentList[i]]
+    // }
+    // let list = all.deleteEle()
 
     console.log(">>>>>>>",list);
 

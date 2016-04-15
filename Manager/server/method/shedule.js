@@ -32,7 +32,8 @@ Meteor.methods({
     teacherName: teacherName,
     className: className,
     teacherOrganization: teacherOrganization,
-    semester: semester
+    semester: semester,
+    studentList: studentId
   }
   let studentList = {
     studentId: studentId,
@@ -40,7 +41,7 @@ Meteor.methods({
   // Schedule.update({scheduleId: scheduleId, courseName: courseName, semester: semester }, {upsert: true})
 
   Schedule.update({scheduleId: scheduleId, courseName: courseName, courseId: courseId, semester: semester},{ $push: { details: details }}, {upsert: true})
-  Schedule.update({scheduleId: scheduleId},{ $push: { studentList: studentId }}, {upsert: true})
+  // Schedule.update({scheduleId: scheduleId},{ $push: { studentList: studentId }}, {upsert: true})
 },
 
   showStudent: function() {
