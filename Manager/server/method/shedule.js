@@ -149,6 +149,7 @@ Meteor.methods({
      query.className = neClassName
 
     let $set = {}
+    $set[key1] = '未修'
     $set[key2] = '可选'
     console.log("message",$set);
     console.log("----", query);

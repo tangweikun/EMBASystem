@@ -21,3 +21,15 @@ FlowRouter.route('/schedule', {
     ReactLayout.render(ShowSchedule)
   }
 });
+
+FlowRouter.route('/trainingplan', {
+  action: function() {
+    ReactLayout.render(ShowTrainingPlan)
+  }
+});
+
+FlowRouter.route('/score', {
+  action: function() {
+    ReactLayout.render(ShowScore)
+  }
+});

@@ -9,3 +9,15 @@ Meteor.publish('schedule', function() {
   // let className = Meteor.users.find()
   // return Schedule.find({});
 });
+
+Meteor.publish('users', function() {
+  return Meteor.users.find({});
+});
+
+Meteor.publish('score', function() {
+  return Score.find({})
+})
+
+Meteor.publish('commit', function() {
+  return Commit.find({})
+})

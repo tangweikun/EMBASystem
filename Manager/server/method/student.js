@@ -43,11 +43,13 @@ Meteor.methods({
     let key
     let trainingPlan = {}
     for (let i = 0; i < tp.length; i++) {
-      let details = tp[i] 
+      let details = tp[i]
+      let courseId = tp[i].courseId
       let courseInfo = {
         courseName: '',
         state: "未修",
         status: "不可选",
+        courseId: courseId
         details: details,
       }
       courseInfo.courseName = tp[i].courseName

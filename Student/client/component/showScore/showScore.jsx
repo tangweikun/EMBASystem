@@ -1,4 +1,4 @@
-ShowTrainingPlan = React.createClass({
+ShowScore = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
@@ -40,7 +40,12 @@ ShowTrainingPlan = React.createClass({
       trainingPlan2 = transform(trainingPlan)
     }
     return this.data.score ? trainingPlan2.map(function(a,n){
-      return <TrainingPlanItem trainingPlan={a} key={n} />
+      if (a.status == '可选') {
+        return <ScoreItem trainingPlan={a} key={n} />
+      } else {
+        return null
+      }
+
     }) : null
   },
 
@@ -57,7 +62,7 @@ ShowTrainingPlan = React.createClass({
             <div className="col-md-1">学时</div>
             <div className="col-md-1">课程状态</div>
             <div className="col-md-1">是否可选</div>
-            <div className="col-md-1">成绩</div>
+            <div className="col-md-1">选课</div>
 
         </div>
         {this.rendercourse()}
