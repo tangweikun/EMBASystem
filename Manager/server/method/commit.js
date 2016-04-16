@@ -20,8 +20,18 @@ Meteor.methods({
         Schedule.update({ courseId: courseId},{ $push: det}, {upsert: true})
       }
     })
+  },
 
-
+  chanSco: function(courseId,studentId, courseName) {
+    let trainingPlan = {}
+    let key = `trainingPlan.${courseId}`
+    let $set = {}
+    $set[key] = {
+      courseName: courseName,
+      state: '学习中',
+      status: '不可选',
+    }
+    Score.update({studentId: studentId},{$set: $set})
   }
 
     })
