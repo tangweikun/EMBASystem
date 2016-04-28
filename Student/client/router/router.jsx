@@ -39,3 +39,9 @@ FlowRouter.route('/', {
     ReactLayout.render(HomePage)
   }
 });
+
+FlowRouter.route('/train', {
+  action: function() {
+    ReactLayout.render(Training)
+  }
+});

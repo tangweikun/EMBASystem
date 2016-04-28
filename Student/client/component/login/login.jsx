@@ -31,7 +31,6 @@ Login = React.createClass({
       },
       text: {
         width: screenWidth * 0.7,
-        // marginBottom: screenWidth * 0.046,
       },
       label: {
         marginRight: screenWidth * 0.025,
@@ -66,8 +65,6 @@ Login = React.createClass({
             style={styles.text}
           />
           </div>
-
-
         </div>
       <div>
         <RaisedButton
