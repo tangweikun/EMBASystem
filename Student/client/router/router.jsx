@@ -1,8 +1,8 @@
-FlowRouter.route('/', {
-  action: function() {
-    ReactLayout.render(Layout, {content: <Home />})
-  }
-});
+// FlowRouter.route('/', {
+//   action: function() {
+//     ReactLayout.render(Layout, {content: <Home />})
+//   }
+// });
 
 FlowRouter.notFound = {
   action: function() {
@@ -31,5 +31,11 @@ FlowRouter.route('/trainingplan', {
 FlowRouter.route('/score', {
   action: function() {
     ReactLayout.render(ShowScore)
+  }
+});
+
+FlowRouter.route('/', {
+  action: function() {
+    ReactLayout.render(HomePage)
   }
 });
