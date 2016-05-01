@@ -1,5 +1,6 @@
 Layout = React.createClass({
   render() {
+    const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider, AppBar } = MUI
     let layout = {
       position: 'relative',
       left: '0px',
