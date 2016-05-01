@@ -12,9 +12,13 @@ Layout = React.createClass({
     return (
       <div style={layout} className="container">
         <Header />
-        <div style={styles.body}>
-        <Nav />
-        {this.props.content}
+        <div style={styles.body} className='row'>
+          <div style={styles.nav} className='col-md-3'>
+            <Nav />
+          </div>
+          <div style={styles.container} className='col-md-9'>
+            {this.props.content}
+          </div>
       </div>
       </div>
     )

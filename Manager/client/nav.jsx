@@ -7,7 +7,7 @@ Nav = React.createClass({
       }
     }
     return (
-    <div className="col-md-3" style={styles.sty1}>
+    <div style={styles.sty1}>
       <List subheader="培养计划">
       <ListItem
         leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
