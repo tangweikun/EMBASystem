@@ -6,7 +6,7 @@ Layout = React.createClass({
     }
     const styles = {
       body: {
-        marginTop: '70px',
+        marginTop: '65px',
       }
     }
     return (

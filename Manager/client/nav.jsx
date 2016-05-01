@@ -1,8 +1,13 @@
 Nav = React.createClass({
   render() {
     const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
+    const styles = {
+      sty1: {
+        borderRight: 'solid 1px #DDDDDD',
+      }
+    }
     return (
-    <div className="col-md-3">
+    <div className="col-md-3" style={styles.sty1}>
       <List subheader="培养计划">
       <ListItem
         leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
