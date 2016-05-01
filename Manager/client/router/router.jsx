@@ -24,7 +24,7 @@ FlowRouter.route('/showcourse', {
 
 FlowRouter.route('/addtrainingplan', {
   action: function() {
-    ReactLayout.render(AddTrainingPlan)
+    ReactLayout.render(Layout, {content: <AddTrainingPlan />})
   }
 });
 
