@@ -26,3 +26,4 @@ twbs:bootstrap
 accounts-password
 izzilab:material-ui
 fortawesome:fontawesome
+momentjs:moment
