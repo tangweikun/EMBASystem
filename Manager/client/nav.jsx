@@ -1,14 +1,100 @@
 Nav = React.createClass({
   render() {
-    let nav = {
-      // position: 'absolute',
-      // left: '0px',
-      // width: '200px',
-      background: 'pink'
-    }
+    const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
     return (
-    <div style={nav} className="col-md-3">
-    <Item title="首页" href="#" />
+    <div className="col-md-3">
+      <List subheader="培养计划">
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="2016届培养计划"
+        href={FlowRouter.path('/showtrainingplan')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="2015届培养计划"
+        href={FlowRouter.path('/showtrainingplan')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="历届培养计划"
+        href={FlowRouter.path('/showtrainingplan')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="添加培养计划"
+        href={FlowRouter.path('/addtrainingplan')}
+      />
+    </List>
+    <Divider />
+    <List subheader="教师管理">
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="教师列表"
+        href={FlowRouter.path('/showteacher')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="添加教师"
+        href={FlowRouter.path('/addteacher')}
+      />
+    </List>
+    <Divider />
+    <List subheader="班级管理">
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="班级列表"
+        href={FlowRouter.path('/showtheclass')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="添加班级"
+        href={FlowRouter.path('/addclass')}
+      />
+    </List>
+    <Divider />
+    <List subheader="学员管理">
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="学员列表"
+        href={FlowRouter.path('/showstudent')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="添加学员"
+        href={FlowRouter.path('/addstudent')}
+      />
+    </List>
+    <Divider />
+    <List subheader="课程表管理">
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="课程表"
+        href={FlowRouter.path('/showschedule')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="添加课程表"
+        href={FlowRouter.path('/addschedule')}
+      />
+    </List>
+    <Divider />
+    <List subheader="成绩管理">
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="成绩列表"
+        href={FlowRouter.path('/showcoursescore')}
+      />
+      <ListItem
+        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        primaryText="录入成绩"
+        href={FlowRouter.path('/addscore')}
+      />
+      </List>
+      <Divider />
+
+
+
+    {/*<Item title="首页" href="#" />
     <ItemHead title="交流平台" />
     <Item title="最新消息" href={FlowRouter.path('newmessage')} />
     <Item title="公共留言" href="#" />
@@ -41,7 +127,7 @@ Nav = React.createClass({
     <Item title="添加课程表" href={FlowRouter.path('/addschedule')} />
     <Item title="添加管理员" href={FlowRouter.path('/addmanager')} />
     <Item title="添加活动" href={FlowRouter.path('/addactivity')} />
-    <Item title="添加讲座" href={FlowRouter.path('/addlecture')} />
+    <Item title="添加讲座" href={FlowRouter.path('/addlecture')} />*/}
 </div>
     )
   }
