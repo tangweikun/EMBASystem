@@ -1,44 +1,128 @@
 AddTeacher = React.createClass({
 
-  handleSubmit(event) {
-    event.preventDefault();
-    let teacherId = ReactDOM.findDOMNode(this.refs.teacherId).value.trim();
-    let teacherName = ReactDOM.findDOMNode(this.refs.teacherName).value.trim();
-    let category = ReactDOM.findDOMNode(this.refs.category).value.trim();
-    let gender = ReactDOM.findDOMNode(this.refs.gender).value.trim();
-    let title = ReactDOM.findDOMNode(this.refs.title).value.trim();
-    let degree = ReactDOM.findDOMNode(this.refs.degree).value.trim();
-    let course = ReactDOM.findDOMNode(this.refs.course).value.trim();
-    let organization = ReactDOM.findDOMNode(this.refs.organization).value.trim();
-    Meteor.call('addTeacher', teacherId, teacherName, category, gender, title, degree, course, organization);
-    ReactDOM.findDOMNode(this.refs.teacherId).value = ''; ReactDOM.findDOMNode(this.refs.teacherName).value = '';
-    ReactDOM.findDOMNode(this.refs.category).value = '';
-    ReactDOM.findDOMNode(this.refs.gender).value = ''; ReactDOM.findDOMNode(this.refs.title).value = '';
-    ReactDOM.findDOMNode(this.refs.degree).value = ''; ReactDOM.findDOMNode(this.refs.course).value = '';
-    ReactDOM.findDOMNode(this.refs.organization).value = '';
+  onSubmit(e) {
+    e.preventDefault()
+    let teacherId = document.getElementById('teacherId').value.trim()
+    let teacherName = document.getElementById('teacherName').value.trim()
+    let gender = document.getElementById('gender').value.trim()
+    let title = document.getElementById('title').value.trim()
+    let degree = document.getElementById('degree').value.trim()
+    let organization = document.getElementById('organization').value.trim()
+    let course = document.getElementById('course').value.trim()
+    Meteor.call('addTeacher', teacherId, teacherName, gender, title, degree, course, organization)
+    document.getElementById('teacherId').value = ''
+    document.getElementById('teacherName').value = ''
+    document.getElementById('gender').value = ''
+    document.getElementById('title').value = ''
+    document.getElementById('degree').value = ''
+    document.getElementById('organization').value = ''
+    document.getElementById('course').value = ''
   },
 
   render() {
+    const { RaisedButton, TextField, AppBar } = MUI
+    const screenWidth = window.innerWidth
+    const styles = {
+      form: {
+        width: screenWidth,
+      },
+      div1: {
+        // width: screenWidth,
+        paddingLeft: '50px',
+        marginBottom: '20px',
+        marginTop: '15px',
+      },
+      button: {
+        width: '350px',
+        marginLeft: '50px',
+      },
+      text: {
+
+      },
+      label: {
+        marginRight: '15px',
+        width: '72px',
+        fontSize: '18px',
+        textAlign: 'right',
+      },
+      titleStyle: {
+        fontSize: '22px',
+        marginTop: '20px',
+      },
+    }
+
     return (
-      <form onSubmit={this.handleSubmit}>
-      <div className="container">
-        <div className="row">
-      <div className="col-md-4"><input type="text" ref="teacherId" placeholder="教师编号"/></div>
-      <div className="col-md-4"><input type="text" ref="teacherName" placeholder="教师姓名"/></div>
-      <div className="col-md-4"><input type="text" ref="category" placeholder="类别"/></div>
-      </div>
-      <div className="row">
-      <div className="col-md-4"><input type="text" ref="gender" placeholder="性别"/></div>
-      <div className="col-md-4"><input type="text" ref="title" placeholder="职称"/></div>
-      <div className="col-md-4"><input type="text" ref="degree" placeholder="学位"/></div>
-      <div className='col-md-4'><input type="text" ref="course" placeholder="课程"/></div>
-      </div>
-      <div className="row">
-      <div className="col-md-4"><input type="text" ref="organization" placeholder="组织"/></div>
-      <div className="col-md-4"><input type="submit" /></div>
-      </div>
-      </div>
-    </form>
+      <form className="" ref="form" onSubmit={this.onSubmit}>
+        <div style={styles.titleStyle}>
+          <label>添加授课教师</label>
+        </div>
+        <div style={styles.div1}>
+          <div>
+            <label style={styles.label}>编号</label>
+            <TextField
+              id="teacherId"
+              hintText="请输入教师编号"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>姓名</label>
+            <TextField
+              id="teacherName"
+              hintText="请输入教师姓名"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>性别</label>
+            <TextField
+              id="gender"
+              hintText="男/女"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>职称</label>
+            <TextField
+              id="title"
+              hintText="教授/副教授/讲师"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>学位</label>
+            <TextField
+              id="degree"
+              hintText="博士/硕士/学士"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>单位</label>
+            <TextField
+              id="organization"
+              hintText="请输入教师所在单位"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>主讲课程</label>
+            <TextField
+              id="course"
+              hintText="请输入主讲课程"
+              style={styles.text}
+              />
+          </div>
+        </div>
+        <div>
+          <RaisedButton
+            label="提交"
+            secondary={true}
+            style={styles.button}
+            onMouseDown={this.onSubmit}
+          />
+        </div>
+      </form>
     )
   }
 })

@@ -22,7 +22,7 @@ ShowTeacher = React.createClass({
         // width: ''
       },
       label3: {
-        marginRight: '36px',
+        marginRight: '20px',
         width: '140px',
       },
       div1: {
@@ -41,10 +41,10 @@ ShowTeacher = React.createClass({
               <label style={styles.label2}>{a.gender}</label>
               <label style={styles.label1}>学位</label>
               <label style={styles.label2}>{a.degree}</label>
-              <label style={styles.label1}>单位</label>
-              <label style={styles.label3}>{a.organization}</label>
               <label style={styles.label1}>职称</label>
               <label style={styles.label2}>{a.title}</label>
+              <label style={styles.label1}>单位</label>
+              <label style={styles.label3}>{a.organization}</label>
               <label style={styles.label1}>主讲课程</label>
               <label style={styles.label3}>{a.course}</label>
             </div>

@@ -7,7 +7,7 @@ Schemas.Teacher = new SimpleSchema({
   teacherName: {
     type: String
   },
-  category: {
+  title: {
     type: String
   },
   gender: {
