@@ -42,6 +42,6 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/train', {
   action: function() {
-    ReactLayout.render(Training)
+    ReactLayout.render(Layout, {content: <Training />})
   }
 });

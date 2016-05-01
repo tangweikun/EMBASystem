@@ -78,10 +78,6 @@ Training = React.createClass({
     if (!this.data.ready) return null
     return (
       <div style={styles.div2}>
-        <AppBar
-          title="我的培养计划"
-          showMenuIconButton={false}
-          />
         {this.rendercourse()}
       </div>
     )
