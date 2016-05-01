@@ -3,8 +3,9 @@ Header = React.createClass({
     const { AppBar } = MUI
     const screenWidth = window.innerWidth
     let header = {
-      // background: 'red',
-      // height: '50px',
+      position: 'fixed',
+      zIndex: '1',
+      width: screenWidth,
     }
     return (
       <div style={header} className="row">
