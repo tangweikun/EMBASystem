@@ -16,7 +16,7 @@ Layout = React.createClass({
         position: 'absolute',
         top: '100px',
         bottom: '100px',
-        // height: '100px',
+        height: '100px',
     /* 使之可以滚动 */
     // overflow-y: scroll;
       },
@@ -41,20 +41,7 @@ Layout = React.createClass({
         </div>
 
         <div style={styles.footer}>
-          <Tabs>
-            <Tab
-              icon={<FontIcon className="material-icons">phone</FontIcon>}
-              label="RECENTS"
-              />
-            <Tab
-              icon={<FontIcon  className="material-icons">favorite</FontIcon>}
-              label="FAVORITES"
-              />
-            <Tab
-              icon={<FontIcon className="material-icons">person_pin</FontIcon>}
-              label="NEARBY"
-              />
-          </Tabs>
+
         </div>
       </div>
     )
