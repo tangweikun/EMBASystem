@@ -28,16 +28,16 @@ AddTrainingPlan = React.createClass({
       },
       div1: {
         // width: screenWidth,
-        paddingLeft: '150px',
+        paddingLeft: '50px',
         marginBottom: '20px',
-        marginTop: '100px',
+        marginTop: '15px',
       },
       button: {
         width: '350px',
-        marginLeft: '150px',
+        marginLeft: '50px',
       },
       text: {
-        // width: screenWidth * 0.7,
+
       },
       label: {
         marginRight: '15px',
@@ -45,14 +45,15 @@ AddTrainingPlan = React.createClass({
         fontSize: '18px',
         textAlign: 'right',
       },
-      bar: {
-        marginBottom: '50px',
+      titleStyle: {
+        fontSize: '22px',
+        marginTop: '20px',
       },
     }
 
     return (
       <form className="" ref="form" onSubmit={this.onSubmit}>
-        <div>
+        <div style={styles.titleStyle}>
           <label>添加培养计划</label>
         </div>
         <div style={styles.div1}>

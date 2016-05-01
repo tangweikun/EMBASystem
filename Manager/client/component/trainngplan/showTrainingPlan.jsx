@@ -56,7 +56,8 @@ ShowTrainingPlan = React.createClass({
     const styles = {
       titleStyle: {
         fontSize: '22px',
-        marginTop: '15px',
+        marginTop: '20px',
+        marginBottom: '10px',
       },
     }
     return (
