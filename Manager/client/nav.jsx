@@ -11,16 +11,6 @@ Nav = React.createClass({
       <List subheader="培养计划">
       <ListItem
         leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
-        primaryText="2016届培养计划"
-        href={FlowRouter.path('/showtrainingplan')}
-      />
-      <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
-        primaryText="2015届培养计划"
-        href={FlowRouter.path('/showtrainingplan')}
-      />
-      <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
         primaryText="历届培养计划"
         href={FlowRouter.path('/showtrainingplan')}
       />
