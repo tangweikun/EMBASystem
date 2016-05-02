@@ -46,7 +46,7 @@ ShowStudent = React.createClass({
               <span style={styles.span1}>民族</span>
               <span style={styles.span3}>{a.profile.nation}</span>
               <span style={styles.span1}>单位</span>
-              <span style={styles.span3}>{a.profile.organization}</span>
+              <span style={styles.span3}>{a.profile.company}</span>
             </div>
             <div style={styles.div1}>
               <span style={styles.span1}>党派</span>
