@@ -18,7 +18,7 @@ ShowScore = React.createClass({
 
   renderScore() {
     console.log("message",this.state.content);
-    return this.state.content ? <AddScore courseName={this.state.content}/> : null
+    return this.state.content ? <ScoreItem2 courseName={this.state.content}/> : null
   },
 
   render() {
