@@ -54,7 +54,7 @@ AddTeacher = React.createClass({
     return (
       <form className="" ref="form" onSubmit={this.onSubmit}>
         <div style={styles.titleStyle}>
-          <label>添加授课教师</label>
+          <label>录入授课教师</label>
         </div>
         <div style={styles.div1}>
           <div>
