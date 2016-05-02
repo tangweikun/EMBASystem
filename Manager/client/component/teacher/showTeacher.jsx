@@ -60,7 +60,6 @@ ShowTeacher = React.createClass({
 
   render() {
     if (!this.data.ready) return null
-    const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
     return (
       <div>
         {this.renderTeacher()}
