@@ -1,109 +1,149 @@
 AddSchedule = React.createClass({
 
   onSubmit(e) {
-    e.preventDefault();
-    let scheduleId = ReactDOM.findDOMNode(this.refs.scheduleId).value, when = ReactDOM.findDOMNode(this.refs.when).value,
-    courseName = ReactDOM.findDOMNode(this.refs.courseName).value,
-    teacherName = ReactDOM.findDOMNode(this.refs.teacherName).value,
-    teacherOrganization = ReactDOM.findDOMNode(this.refs.teacherOrganization).value,
-    className = ReactDOM.findDOMNode(this.refs.className).value,
-    where = ReactDOM.findDOMNode(this.refs.where).value;
-    semester = ReactDOM.findDOMNode(this.refs.semester).value;
-    courseId = ReactDOM.findDOMNode(this.refs.courseId).value;
-    Meteor.call('addSchedule', scheduleId, when, courseName, teacherName, teacherOrganization, className, where, semester,courseId);
+    e.preventDefault()
+    let scheduleId = document.getElementById('scheduleId').value.trim()
+    let when = document.getElementById('when').value.trim()
+    let courseName = document.getElementById('courseName').value.trim()
+    let teacherName = document.getElementById('teacherName').value.trim()
+    let teacherOrganization = document.getElementById('teacherOrganization').value.trim()
+    let className = document.getElementById('className').value.trim()
+    let where = document.getElementById('where').value.trim()
+    let semester = document.getElementById('semester').value.trim()
+    let courseId = document.getElementById('courseId').value.trim()
+    Meteor.call('addSchedule', scheduleId, when, courseName, teacherName, teacherOrganization, className, where, semester, courseId);
 //改变score中的state和status
     Meteor.call('changeState',courseName, className, courseId)
     Meteor.call('changeState2',courseName, className, courseId)
-
-    ReactDOM.findDOMNode(this.refs.scheduleId).value = ''; ReactDOM.findDOMNode(this.refs.when).value = '';
-    ReactDOM.findDOMNode(this.refs.courseName).value = '';
-    ReactDOM.findDOMNode(this.refs.teacherName).value = '';
-    ReactDOM.findDOMNode(this.refs.teacherOrganization).value = '';
-    ReactDOM.findDOMNode(this.refs.className).value = '';
-    ReactDOM.findDOMNode(this.refs.where).value = '';
-    ReactDOM.findDOMNode(this.refs.semester).value = '';
-    ReactDOM.findDOMNode(this.refs.courseId).value = '';
+    document.getElementById('scheduleId').value = ''
+    document.getElementById('when').value = ''
+    document.getElementById('courseName').value = ''
+    document.getElementById('teacherName').value = ''
+    document.getElementById('teacherOrganization').value = ''
+    document.getElementById('className').value = ''
+    document.getElementById('where').value = ''
+    document.getElementById('semester').value = ''
+    document.getElementById('courseId').value = ''
   },
 
   render() {
+    const { RaisedButton, TextField, AppBar } = MUI
+    const screenWidth = window.innerWidth
+    const styles = {
+      form: {
+        width: screenWidth,
+      },
+      div1: {
+        // width: screenWidth,
+        paddingLeft: '50px',
+        marginBottom: '20px',
+        marginTop: '15px',
+      },
+      button: {
+        width: '350px',
+        marginLeft: '50px',
+      },
+      text: {
+
+      },
+      label: {
+        marginRight: '15px',
+        width: '72px',
+        fontSize: '18px',
+        textAlign: 'right',
+      },
+      titleStyle: {
+        fontSize: '22px',
+        marginTop: '20px',
+      },
+    }
+
     return (
       <form className="" ref="form" onSubmit={this.onSubmit}>
-        <div className="container">
-        <div className="row">
-        <div className="col-md-4">
-          <label>序号</label>
+        <div style={styles.titleStyle}>
+          <label>录入课程表</label>
         </div>
-        <div className="col-md-4">
-          <input type="text" ref="scheduleId" />
+        <div style={styles.div1}>
+          <div>
+            <label style={styles.label}>序号</label>
+            <TextField
+              id="scheduleId"
+              hintText="请输入课程序号"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>时间</label>
+            <TextField
+              id="when"
+              hintText="请输入上课时间"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>课程</label>
+            <TextField
+              id="courseName"
+              hintText="请输入课程名称"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>课程编号</label>
+            <TextField
+              id="courseId"
+              hintText="请输入课程编号"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>主讲教师</label>
+            <TextField
+              id="teacherName"
+              hintText="请输入主讲教师"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>教师单位</label>
+            <TextField
+              id="teacherOrganization"
+              hintText="请输入教师所在单位"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>上课班级</label>
+            <TextField
+              id="className"
+              hintText="请输入上课班级"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>上课地点</label>
+            <TextField
+              id="where"
+              hintText="请输入上课地点"
+              style={styles.text}
+              />
+          </div>
+          <div>
+            <label style={styles.label}>学期</label>
+            <TextField
+              id="semester"
+              hintText="请输入学期"
+              style={styles.text}
+              />
+          </div>
         </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>时间</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="when" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>课程</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="courseName" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>课程编号</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="courseId" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>主讲教师</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="teacherName" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>授课教师单位</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="teacherOrganization" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>上课班级</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="className" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>上课地点</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="where" />
-        </div>
-        </div>
-        <div className="row">
-        <div className="col-md-4">
-          <label>学期</label>
-        </div>
-        <div className="col-md-4">
-          <input type="text" ref="semester" />
-        </div>
-        </div>
-        <div calssName="row">
-          <button type="submit">提交</button>
-        </div>
+        <div>
+          <RaisedButton
+            label="提交"
+            secondary={true}
+            style={styles.button}
+            onMouseDown={this.onSubmit}
+          />
         </div>
       </form>
     )
