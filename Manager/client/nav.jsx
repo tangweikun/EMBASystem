@@ -10,12 +10,12 @@ Nav = React.createClass({
     <div style={styles.sty1}>
       <List subheader="培养计划">
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
         primaryText="历届培养计划"
         href={FlowRouter.path('/showtrainingplan')}
       />
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-pencil-square-o" aria-hidden="true"></i>} />}
         primaryText="添加培养计划"
         href={FlowRouter.path('/addtrainingplan')}
       />
@@ -23,12 +23,12 @@ Nav = React.createClass({
     <Divider />
     <List subheader="教师管理">
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-users" aria-hidden="true"></i>} />}
         primaryText="教师列表"
         href={FlowRouter.path('/showteacher')}
       />
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-user-plus" aria-hidden="true"></i>} />}
         primaryText="添加教师"
         href={FlowRouter.path('/addteacher')}
       />
@@ -36,12 +36,12 @@ Nav = React.createClass({
     <Divider />
     <List subheader="班级管理">
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-university" aria-hidden="true"></i>} />}
         primaryText="班级列表"
         href={FlowRouter.path('/showtheclass')}
       />
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-pencil-square-o" aria-hidden="true"></i>} />}
         primaryText="添加班级"
         href={FlowRouter.path('/addclass')}
       />
@@ -49,12 +49,12 @@ Nav = React.createClass({
     <Divider />
     <List subheader="学员管理">
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-users" aria-hidden="true"></i>} />}
         primaryText="学员列表"
         href={FlowRouter.path('/showstudent')}
       />
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-user-plus" aria-hidden="true"></i>} />}
         primaryText="添加学员"
         href={FlowRouter.path('/addstudent')}
       />
@@ -62,12 +62,12 @@ Nav = React.createClass({
     <Divider />
     <List subheader="课程表管理">
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-calendar" aria-hidden="true"></i>} />}
         primaryText="课程表"
         href={FlowRouter.path('/showschedule')}
       />
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-pencil-square-o" aria-hidden="true"></i>} />}
         primaryText="添加课程表"
         href={FlowRouter.path('/addschedule')}
       />
@@ -75,12 +75,12 @@ Nav = React.createClass({
     <Divider />
     <List subheader="成绩管理">
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
         primaryText="成绩列表"
         href={FlowRouter.path('/showcoursescore')}
       />
       <ListItem
-        leftAvatar={<Avatar icon={<i className="fa fa-bars" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-pencil-square-o" aria-hidden="true"></i>} />}
         primaryText="录入成绩"
         href={FlowRouter.path('/addscore')}
       />
