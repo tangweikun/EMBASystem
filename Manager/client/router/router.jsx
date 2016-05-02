@@ -6,13 +6,13 @@ FlowRouter.route('/', {
 
 FlowRouter.notFound = {
   action: function() {
-    ReactLayout.render(NotFound)
+    ReactLayout.render(Layout, {content: <NotFound />})
   }
 };
 
 FlowRouter.route('/addcourse', {
   action: function() {
-    ReactLayout.render(AddCourse)
+    ReactLayout.render(Layout, {content: <AddCourse />})
   }
 });
 
@@ -48,13 +48,13 @@ FlowRouter.route('/showteacher', {
 
 FlowRouter.route('/addclass', {
   action: function() {
-    ReactLayout.render(AddTheClass)
+    ReactLayout.render(Layout, {content: <AddTheClass />})
   }
 });
 
 FlowRouter.route('/addschedule', {
   action: function() {
-    ReactLayout.render(AddSchedule)
+    ReactLayout.render(Layout, {content: <AddSchedule />})
   }
 });
 
@@ -78,7 +78,7 @@ FlowRouter.route('/showstudent', {
 
 FlowRouter.route('/addmanager', {
   action: function() {
-    ReactLayout.render(AddManager)
+    ReactLayout.render(Layout, {content: <AddManager />})
   }
 });
 
@@ -90,18 +90,18 @@ FlowRouter.route('/showmanager', {
 
 FlowRouter.route('/addscore', {
   action: function() {
-    ReactLayout.render(AddScore)
+    ReactLayout.render(Layout, {content: <AddScore />})
   }
 });
 
 FlowRouter.route('/showscore', {
   action: function() {
-    ReactLayout.render(ShowScore)
+    ReactLayout.render(Layout, {content: <ShowScore />})
   }
 });
 
 FlowRouter.route('/showcommit', {
   action: function() {
-    ReactLayout.render(ShowCommit)
+    ReactLayout.render(Layout, {content: <ShowCommit />})
   }
 });
