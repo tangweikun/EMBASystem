@@ -10,7 +10,8 @@ AddScore = React.createClass({
     return {
       score: sub1.ready() ? score : null,
       schedule: sub2.ready() ? schedule : null,
-      oneSchedule: sub2.ready() ? oneSchedule : null
+      oneSchedule: sub2.ready() ? oneSchedule : null,
+      ready: sub1.ready() && sub2.ready(),
     }
   },
 
@@ -49,14 +50,6 @@ AddScore = React.createClass({
     }
     let list = all.deleteEle()
 
-
-    // studentList = oneSchedule ? oneSchedule.studentList : ''
-    // groupNum = studentList.length
-    // for (let i = 0; i < groupNum; i++) {
-    //   all = [...all, ...studentList[i]]
-    // }
-    // let list = all.deleteEle()
-
     console.log(">>>>>>>",list);
 
     return list.length > 0 ? list.map(function(a,n){
@@ -67,15 +60,9 @@ AddScore = React.createClass({
 
 
   render() {
+    if (!this.data.ready) return null
     return (
       <div>
-        <div className="col-md-9">
-            <div className="col-md-2">课程名称</div>
-            <div className="col-md-2">姓名</div>
-            <div className="col-md-2">学号</div>
-            <div className="col-md-2">班级</div>
-            <div className="col-md-2">成绩</div>
-        </div>
         {this.renderScore()}
       </div>
     )

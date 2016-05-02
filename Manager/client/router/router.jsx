@@ -90,7 +90,7 @@ FlowRouter.route('/showmanager', {
 
 FlowRouter.route('/addscore', {
   action: function() {
-    ReactLayout.render(Layout, {content: <AddScore />})
+    ReactLayout.render(Layout, {content: <TScore />})
   }
 })
 
