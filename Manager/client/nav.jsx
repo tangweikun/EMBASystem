@@ -77,7 +77,7 @@ Nav = React.createClass({
       <ListItem
         leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
         primaryText="成绩列表"
-        href={FlowRouter.path('/showcoursescore')}
+        href={FlowRouter.path('/showscore')}
       />
       <ListItem
         leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-pencil-square-o" aria-hidden="true"></i>} />}
