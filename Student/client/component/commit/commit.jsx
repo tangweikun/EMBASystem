@@ -3,7 +3,6 @@ ShowCommit = React.createClass({    //选课
 
   getMeteorData() {
     let score
-    let commit
     let sub1 = Meteor.subscribe('score')
     let sub2 = Meteor.subscribe('users')
     let sub3 = Meteor.subscribe('commit')
@@ -12,7 +11,6 @@ ShowCommit = React.createClass({    //选课
     if (sub1.ready() && sub2.ready()) {
       let studentId = Meteor.users.findOne({_id: Meteor.userId()}).profile.studentId
       score = Score.findOne({studentId: studentId})
-      commit = Commit.findOne({studentId: studentId})
       console.log("score-->",score);
     }
 
@@ -20,8 +18,7 @@ ShowCommit = React.createClass({    //选课
 
     return {
       score: sub1.ready() ? score : null,
-      commit: sub3.ready() ? commit : null,
-      ready: sub1.ready() && sub2.ready() && sub3.ready(),
+      ready: sub1.ready() && sub2.ready(),
     }
   },
 
@@ -42,7 +39,7 @@ ShowCommit = React.createClass({    //选课
     console.log(">>>",trainingPlan2);
 
     return trainingPlan2.map(function(a,n){
-      if (a.status == '可选' && !commit) {
+      if (a.status == '可选') {
         return <CommitItem trainingPlan={a} key={n} />
       } else {
         return null
