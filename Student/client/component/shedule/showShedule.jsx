@@ -44,29 +44,78 @@ ShowSchedule = React.createClass({
 
 
     return {
-      schedule:sub.ready() ? all2 : null
+      schedule:sub.ready() ? all2 : null,
+      ready: sub.ready(),
     }
   },
 
   rendercourse() {
-    return this.data.schedule ? this.data.schedule.map(function(a,n){
-      return <ScheduleItem schedule={a} key={n} />
-    }) : null
+    const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
+    const styles = {
+      span1: {
+        marginRight: '8px',
+        // width: '20px',
+      },
+      span2: {
+        marginRight: '36px',
+        // width: ''
+      },
+      span3: {
+        marginRight: '20px',
+        width: '140px',
+      },
+      div1: {
+        marginTop: '1px',
+      },
+    }
+    return this.data.schedule.map(function(a,n){
+      return (
+        <div key={n} className='col-md-9'>
+        <ListItem
+          primaryText={a.courseName}
+          secondaryText={
+            <div>
+            <div style={styles.div1}>
+              <span style={styles.span1}>上课时间</span>
+              <span style={styles.span2}>{a.when}</span>
+              <span style={styles.span1}>上课地点</span>
+              <span style={styles.span2}>{a.where}</span>
+              <span style={styles.span1}>上课班级</span>
+              <span style={styles.span3}>{a.className}</span>
+            <div>
+              <span style={styles.span1}>上课教师</span>
+              <span style={styles.span2}>{a.teacherName}</span>
+              <span style={styles.span1}>教师单位</span>
+              <span style={styles.span3}>{a.teacherOrganization}</span>
+            </div>
+            </div>
+          </div>
+          }
+          secondaryTextLines={2}
+        />
+      <Divider />
+        </div>
+      )
+    })
   },
 
   render() {
+    if (!this.data.ready) return null
+    const styles = {
+      titleStyle: {
+        fontSize: '22px',
+        marginTop: '20px',
+        marginBottom: '10px',
+      },
+    }
     return (
       <div>
-        <div className="col-md-9">
-            <div className="col-md-1">序号</div>
-            <div className="col-md-1">时间</div>
-            <div className="col-md-1">课程</div>
-            <div className="col-md-1">主讲教师</div>
-            <div className="col-md-1">授课教师单位</div>
-            <div className="col-md-1">上课班级</div>
-            <div className="col-md-1">上课地点</div>
+        <div className="col-md-9" style={styles.titleStyle}>
+          <span>课程表</span>
         </div>
-        {this.rendercourse()}
+        <div>
+          {this.rendercourse()}
+        </div>
       </div>
     )
   }
