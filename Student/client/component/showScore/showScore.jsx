@@ -42,7 +42,7 @@ ShowScore = React.createClass({    //选课
     console.log(">>>",trainingPlan2);
 
     return trainingPlan2.map(function(a,n){
-      if (a.status == '可选' && !commit) {
+      if (a.status == '可选') {
         return <ScoreItem trainingPlan={a} key={n} />
       } else {
         return null
