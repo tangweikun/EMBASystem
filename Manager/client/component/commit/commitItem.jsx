@@ -3,12 +3,10 @@ CommitItem = React.createClass({
   _onClick(e) {
     let state = e.target.value
     Meteor.call('approval', this.props.commit.studentId, this.props.commit.courseId, state)
-    console.log("NNNNN",this.props.commit.studentId, this.props.commit.courseId, state);
-
-    Meteor.call('chanSch', this.props.commit.studentId, this.props.commit.courseId)
-    Meteor.call('chanSco', this.props.commit.studentId, this.props.commit.courseId, this.props.commit.courseName)
-
-
+    if (state == '同意') {
+      Meteor.call('chanSch', this.props.commit.studentId, this.props.commit.courseId,state)
+      Meteor.call('chanSco', this.props.commit.studentId, this.props.commit.courseId, this.props.commit.courseName,state)
+    }
   },
   render() {
     console.log("--->");
