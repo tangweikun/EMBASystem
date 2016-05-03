@@ -1,4 +1,4 @@
-ShowScore = React.createClass({
+ShowScore = React.createClass({    //选课
   mixins: [ReactMeteorData],
 
   getMeteorData() {
@@ -13,16 +13,12 @@ ShowScore = React.createClass({
       console.log("score-->",score);
 
     }
-    console.log(">>>");
-    console.log(">>>",sub1.ready());
-    console.log(">>>",sub2.ready());
 
 
 
     return {
-      score:sub1.ready() ? score : null,
-      sub1: sub1.ready(),
-      sub2: sub2.ready()
+      score: sub1.ready() ? score : null,
+      ready: sub1.ready() && sub2.ready(),
     }
   },
 
@@ -39,18 +35,19 @@ ShowScore = React.createClass({
       trainingPlan = this.data.score.trainingPlan
       trainingPlan2 = transform(trainingPlan)
     }
-    return this.data.score ? trainingPlan2.map(function(a,n){
+    console.log(">>>",trainingPlan2);
+
+    return trainingPlan2.map(function(a,n){
       if (a.status == '可选') {
         return <ScoreItem trainingPlan={a} key={n} />
       } else {
         return null
       }
-
-    }) : null
+    })
   },
 
   render() {
-    console.log("sub1",this.data.sub1,this.data.sub2);
+    if (!this.data.ready) return null
 
     return (
       <div>
