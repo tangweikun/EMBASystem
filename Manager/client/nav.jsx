@@ -73,6 +73,14 @@ Nav = React.createClass({
       />
     </List>
     <Divider />
+    <List subheader="选课管理">
+      <ListItem
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
+        primaryText="选课申请"
+        href={FlowRouter.path('/showscore')}
+    />
+    </List>
+    <Divider />
     <List subheader="成绩管理">
       <ListItem
         leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
@@ -84,8 +92,9 @@ Nav = React.createClass({
         primaryText="录入成绩"
         href={FlowRouter.path('/addscore')}
       />
-      </List>
-      <Divider />
+    </List>
+    <Divider />
+
 
 
 
