@@ -22,16 +22,16 @@ Meteor.methods({
     })
   },
 
-  chanSco: function(courseId,studentId, courseName) {
+  chanSco: function(studentId,courseId, courseName) {
     let trainingPlan = {}
-    let key = `trainingPlan.${courseId}`
+    let key1 = `trainingPlan.${courseId}.state`
+    let key2 = `trainingPlan.${courseId}.status`
     let $set = {}
-    $set[key] = {
-      courseName: courseName,
-      state: '学习中',
-      status: '不可选',
-    }
+    $set[key1] = '学习中',
+    $set[key2] = '不可选',
     Score.update({studentId: studentId},{$set: $set})
+    console.log("MMMMM",$set);
+
   }
 
     })
