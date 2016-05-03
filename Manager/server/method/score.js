@@ -6,13 +6,21 @@ Meteor.methods({
     state = score >= 60 ? "已修" : "未修"
     status = score >= 60 ? "不可选" : "可选"
     let key = `trainingPlan.${courseId}`
+    let details = TrainingPlan.findOne({courseId: courseId})
+    // let details = TrainingPlan.findOne({studentId: studentId}).trainingPlan[`${courseId}`]
+    // console.log("<<SSS","MM",score2.trainingPlan[`${courseId}`]);
+
+    // let details = score2[`${key}`].details
+    // console.log('>>>>><<<<',details);
+
     console.log("111",key);
     let $set = {}
     $set[key] = {
       courseName: courseName,
       state: state,
       status: status,
-      score: score
+      score: score,
+      details: details,
     }
     console.log("message",$set);
     Score.update({studentId: studentId}, {$set: $set})
