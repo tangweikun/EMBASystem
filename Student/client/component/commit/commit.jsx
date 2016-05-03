@@ -52,17 +52,6 @@ ShowCommit = React.createClass({    //选课
 
     return (
       <div>
-        <div className="col-md-9">
-            <div className="col-md-2">课程编号</div>
-            <div className="col-md-2">课程名称</div>
-            <div className="col-md-2">类别</div>
-            <div className="col-md-1">学分</div>
-            <div className="col-md-1">学时</div>
-            <div className="col-md-1">课程状态</div>
-            <div className="col-md-1">是否可选</div>
-            <div className="col-md-1">选课</div>
-
-        </div>
         {this.rendercourse()}
       </div>
     )
