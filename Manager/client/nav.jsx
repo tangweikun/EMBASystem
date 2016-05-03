@@ -77,7 +77,7 @@ Nav = React.createClass({
       <ListItem
         leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
         primaryText="选课申请"
-        href={FlowRouter.path('/showscore')}
+        href={FlowRouter.path('/showcommit')}
     />
     </List>
     <Divider />
