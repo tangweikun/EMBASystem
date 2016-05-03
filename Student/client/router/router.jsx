@@ -45,3 +45,9 @@ FlowRouter.route('/train', {
     ReactLayout.render(Layout, {content: <Training />})
   }
 });
+
+FlowRouter.route('/commit', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowCommit />})
+  }
+});
