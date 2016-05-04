@@ -18,18 +18,19 @@ Layout = React.createClass({
       lineHeight: '45px',
       },
       body: {
-        position: 'absolute',
-        top: '100px',
-        bottom: '100px',
-        height: '100px',
+        position: 'relative',
+        top: '70px',
+        marginBottom: '45px',
+        // height: '100px',
     /* 使之可以滚动 */
-    // overflow-y: scroll;
+    // overflowY: 'scroll',
       },
       header: {
         position: 'fixed',
         top: 0,
         width: screenWidth,
         zIndex: '14',
+        height: '64px',
       },
       label: {
         minWidth: '90px',
