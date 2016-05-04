@@ -1,6 +1,6 @@
 Layout = React.createClass({
   render() {
-    const { Tabs, Tab, AppBar, FontIcon } = MUI
+    const { Tabs, Tab, AppBar, FontIcon, IconButton } = MUI
     const screenWidth = window.innerWidth
     let layout = {
       position: 'relative',
@@ -46,9 +46,15 @@ Layout = React.createClass({
         </div>
 
         <div style={styles.footer}>
-          <label style={styles.label}><a href={FlowRouter.go('/')}><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
-          <label style={styles.label}><a href={FlowRouter.go('/score')}><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
-          <label style={styles.label}><a href={FlowRouter.go('/login')}><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}><a href='/'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}><a href='/score'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}><a href='/login'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+            <IconButton
+              iconClassName="material-icons"
+              tooltip="Ligature"
+              >
+              home
+            </IconButton>
         </div>
       </div>
     )

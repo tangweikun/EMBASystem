@@ -3,8 +3,13 @@ Login = React.createClass({
     event.preventDefault()
     let username = document.getElementById('username').value.trim()
     let password = document.getElementById('password').value.trim()
+    console.log("<<<",username,password);
+
     Meteor.loginWithPassword( username, password,
     function (err) {
+      console.log("CCC");
+
+      console.log(err, arguments)
       if (!err) {
         FlowRouter.go('/')
         return
@@ -12,6 +17,8 @@ Login = React.createClass({
         console.log("wrong password");
       }
     })
+    console.log("NNN");
+
   },
   render() {
     const { RaisedButton, TextField, AppBar } = MUI
@@ -71,7 +78,8 @@ Login = React.createClass({
           label="登录"
           secondary={true}
           style={styles.button}
-          onMouseEnter={this.onSubmit}   //onMouseEnter需去掉
+          onMouseEnter={this.onSubmit}
+
           onTouchEnd={this.onSubmit}
         />
       </div>
