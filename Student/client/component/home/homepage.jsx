@@ -38,7 +38,7 @@ HomePage = React.createClass({
     return (
       <div>
         <ListItem
-          leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
+          leftIcon={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
           primaryText={ "汤伟坤"  }
           secondaryText={
             <p>
@@ -49,13 +49,13 @@ HomePage = React.createClass({
         <Divider inset={true} />
         <List>
           <ListItem
-            leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
+            leftIcon={<img src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
             primaryText="我的培养计划"
             onMouseEnter={this.onTouchTap}
           />
           <Divider inset={true} />
           <ListItem
-            leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
+            leftIcon={<i className="fa fa-university fa-2x" aria-hidden="true" style={{color: 'red'}}></i>}
             primaryText="我的课程表"
             onTouchTap={this.onTouchTap}
           />
