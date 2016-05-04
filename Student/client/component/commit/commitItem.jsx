@@ -26,15 +26,60 @@ CommitItem = React.createClass({
 
   },
   render() {
+    const { ListItem, Divider, RaisedButton } = MUI
+    const screenWidth = window.innerWidth
+    const styles = {
+      span1: {
+        marginRight: '8px',
+      },
+      span2: {
+        marginRight: '30px',
+      },
+      div1: {
+        marginTop: '2px',
+      },
+      button: {
+        float: 'left',
+        marginLeft: '50px',
+      },
+      courseName: {
+        minWidth: '200px',
+        float: 'left',
+        fontSize: '22px',
+        lineHeight: '40px',
+        height: '40px',
+      },
+      d2: {
+        clear: 'both'
+      },
+      label: {
+        fontSize: '18px',
+        marginRight: '8px',
+      },
+      sty1: {
+        marginBottom: '15px',
+      }
+    }
     return (
-      <div className="col-md-9">
-          <div className="col-md-2">{this.props.trainingPlan.details.courseId}</div>
-          <div className="col-md-2">{this.props.trainingPlan.courseName}</div>
-          <div className="col-md-2">{this.props.trainingPlan.details.category}</div>
-          <div className="col-md-1">{this.props.trainingPlan.details.credit}</div>
-          <div className="col-md-1">{this.props.trainingPlan.details.period}</div>
-          <div className="col-md-1">{this.props.trainingPlan.state}</div>            <div className="col-md-1">{this.props.trainingPlan.status}</div>
-          <div className="col-md-1"><input type="button" value="申请选课" onClick={this._onClick} disabled={this.data.disabled} /></div>
+      <div style={styles.sty1}>
+        <div>
+          <div style={styles.courseName}>{this.props.trainingPlan.courseName}</div>
+          <div style={styles.button}>
+            <RaisedButton
+              label="Secondary"
+              secondary={true}
+              disabled={this.data.disabled}
+              onTouchEnd={this._onClick}
+              onMouseDown={this._onClick} />
+            </div>
+        </div>
+        <div style={styles.d2}>
+          <label style={styles.label}>{this.props.trainingPlan.details.category}</label>
+          <label style={styles.label}>{this.props.trainingPlan.details.credit}学分</label>
+          <label style={styles.label}>{this.props.trainingPlan.details.period}学时</label>
+        </div>
+      <Divider />
+
       </div>
     )
   }
