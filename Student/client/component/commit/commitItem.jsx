@@ -16,7 +16,8 @@ CommitItem = React.createClass({
       }
     }
     return {
-      disabled: sub1.ready() ? disabled : ''
+      disabled: sub1.ready() ? disabled : '',
+      ready: sub1.ready() && sub2.ready(),
     }
   },
 
@@ -26,6 +27,7 @@ CommitItem = React.createClass({
 
   },
   render() {
+    if (!this.data.ready) return null
     const { ListItem, Divider, RaisedButton } = MUI
     const screenWidth = window.innerWidth
     const styles = {
