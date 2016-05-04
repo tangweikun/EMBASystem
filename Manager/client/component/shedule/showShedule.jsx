@@ -11,20 +11,33 @@ ShowSchedule = React.createClass({
     let detailsList = []
     let count1
     let count2
+    let all2 = []
     if (sub.ready()) {
       schedule = Schedule.find({}).fetch();
       count1 = schedule.length
       for (let i = 0; i < count1; i++) {
-        detailsList.push(schedule[i].details)
+        // if (schedule[i].details.xuanke)
+        console.log("<<<<MMD",schedule[i].details);
+
+          detailsList.push(schedule[i].details)
       }
       count2 = detailsList.length
       for (let j = 0; j < count2; j++) {
+        console.log("CCC",detailsList[j]);
+
         all = [...all, ...detailsList[j]]
       }
+      for (let k = 0; k < all.length; k++) {
+        if (!all[k].xuanke) {
+          all2.push(all[k])
+        }
+      }
+      console.log("CCVVV",all2);
+
       console.log("message",all);
     }
     return {
-      schedule:sub.ready() ? all : null,
+      schedule:sub.ready() ? all2 : null,
       ready: sub.ready(),
     }
   },

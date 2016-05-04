@@ -17,6 +17,7 @@ Meteor.methods({
         det.details = a
         det.details.className = className
         det.details.studentList = [studentId]
+        det.details.xuanke = 'true'
         Schedule.update({ courseId: courseId},{ $push: det}, {upsert: true})
       }
     })
