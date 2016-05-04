@@ -13,6 +13,9 @@ Layout = React.createClass({
       bottom: 0,
       background: '#00bcd4',
       zIndex: '1',
+      textAlign: 'center',
+      height: '45px',
+      lineHeight: '45px',
       },
       body: {
         position: 'absolute',
@@ -29,7 +32,11 @@ Layout = React.createClass({
         zIndex: '14',
       },
       label: {
-        marginLeft: '50px',
+        minWidth: '90px',
+        paddingTop: '5px',
+
+
+        // marginLeft: '50px',
       }
 
     }
@@ -46,15 +53,9 @@ Layout = React.createClass({
         </div>
 
         <div style={styles.footer}>
-          <label style={styles.label}><a href='/'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}><a href='/'><i className="fa fa-university fa-2x" aria-hidden="true"></i></a></label>
           <label style={styles.label}><a href='/score'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
-          <label style={styles.label}><a href='/login'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
-            <IconButton
-              iconClassName="material-icons"
-              tooltip="Ligature"
-              >
-              home
-            </IconButton>
+          <label style={styles.label}><a href='/login'><i className="fa fa-user fa-2x" aria-hidden="true"></i></a></label>
         </div>
       </div>
     )
