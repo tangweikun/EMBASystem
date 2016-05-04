@@ -11,6 +11,8 @@ Layout = React.createClass({
       left: 0,
       right: 0,
       bottom: 0,
+      background: '#00bcd4',
+      zIndex: '1',
       },
       body: {
         position: 'absolute',
@@ -25,6 +27,9 @@ Layout = React.createClass({
         top: 0,
         width: screenWidth,
         zIndex: '14',
+      },
+      label: {
+        marginLeft: '50px',
       }
 
     }
@@ -41,7 +46,9 @@ Layout = React.createClass({
         </div>
 
         <div style={styles.footer}>
-
+          <label style={styles.label}><a href={FlowRouter.go('/')}><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}><a href={FlowRouter.go('/score')}><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}><a href={FlowRouter.go('/login')}><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
         </div>
       </div>
     )

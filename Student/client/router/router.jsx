@@ -18,25 +18,25 @@ FlowRouter.route('/login', {
 
 FlowRouter.route('/schedule', {
   action: function() {
-    ReactLayout.render(ShowSchedule)
+    ReactLayout.render(Layout, {content: <ShowSchedule />})
   }
 });
 
 FlowRouter.route('/trainingplan', {
   action: function() {
-    ReactLayout.render(ShowTrainingPlan)
+    ReactLayout.render(Layout, {content: <ShowTrainingPlan />})
   }
 });
 
 FlowRouter.route('/score', {
   action: function() {
-    ReactLayout.render(ShowScore)
+    ReactLayout.render(Layout, {content: <ShowScore />})
   }
 });
 
 FlowRouter.route('/', {
   action: function() {
-    ReactLayout.render(HomePage)
+    ReactLayout.render(Layout, {content: <HomePage />})
   }
 });
 
