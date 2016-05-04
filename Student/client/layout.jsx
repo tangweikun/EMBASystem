@@ -19,7 +19,7 @@ Layout = React.createClass({
       },
       body: {
         position: 'relative',
-        top: '70px',
+        top: '64px',
         marginBottom: '45px',
         // height: '100px',
     /* 使之可以滚动 */
@@ -35,11 +35,7 @@ Layout = React.createClass({
       label: {
         minWidth: '90px',
         paddingTop: '5px',
-
-
-        // marginLeft: '50px',
       }
-
     }
     return (
       <div style={layout}>
@@ -52,11 +48,22 @@ Layout = React.createClass({
         <div style={styles.body}>
             {this.props.content}
         </div>
-
         <div style={styles.footer}>
-          <label style={styles.label}><a href='/'><i className="fa fa-university fa-2x" aria-hidden="true"></i></a></label>
-          <label style={styles.label}><a href='/score'><i className="fa fa-diamond fa-2x" aria-hidden="true"></i></a></label>
-          <label style={styles.label}><a href='/login'><i className="fa fa-user fa-2x" aria-hidden="true"></i></a></label>
+          <label style={styles.label}>
+            <a href='/'>
+              <i className="fa fa-university fa-2x" aria-hidden="true" style={{color:'#ffffff'}}></i>
+            </a>
+          </label>
+          <label style={styles.label}>
+            <a href='/score'>
+              <i className="fa fa-diamond fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
+            </a>
+          </label>
+          <label style={styles.label}>
+            <a href='/login'>
+              <i className="fa fa-user fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
+            </a>
+          </label>
         </div>
       </div>
     )
