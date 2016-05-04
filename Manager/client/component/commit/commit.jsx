@@ -3,31 +3,24 @@ ShowCommit = React.createClass({
 
   getMeteorData() {
     let sub = Meteor.subscribe('commit');
-
-    // let trainingPlan = score.trainingPlan
     if (sub.ready()) {
       commit = Commit.find({state: '申请中'}).fetch()
       console.log("----,,,",commit);
-
     }
     return {
       commit:sub.ready() ? commit : null,
-      sub: sub.ready(),
+      ready: sub.ready(),
     }
   },
 
   rendercourse() {
-    console.log("----");
-    console.log(">>",this.data.commit ? this.data.commit : 33);
-
-
-
-    return this.data.commit ? this.data.commit.map(function(a,n){
-        return <CommitItem commit={a} key={n} />
-    }) : null
+    return this.data.commit.map(function(a,n){
+      return <CommitItem commit={a} key={n} />
+    })
   },
 
   render() {
+    if (!this.data.ready) return null
     return (
       <div>
         <div className="col-md-9">
