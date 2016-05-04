@@ -79,7 +79,6 @@ CommitItem = React.createClass({
           <label style={styles.label}>{this.props.trainingPlan.details.period}学时</label>
         </div>
       <Divider />
-
       </div>
     )
   }
