@@ -23,15 +23,6 @@ ShowCommit = React.createClass({
     if (!this.data.ready) return null
     return (
       <div>
-        <div className="col-md-9">
-            <div className="col-md-2">姓名</div>
-            <div className="col-md-2">学号</div>
-            <div className="col-md-2">班级</div>
-            <div className="col-md-1">课程</div>
-            <div className="col-md-1">课程号</div>
-            <div className="col-md-1">课程状态</div>
-            <div className="col-md-1">审批</div>
-        </div>
         {this.rendercourse()}
       </div>
     )

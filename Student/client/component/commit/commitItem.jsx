@@ -21,8 +21,8 @@ CommitItem = React.createClass({
     }
   },
 
-  _onClick() {
-    console.log("h");
+  _onClick(e) {
+    console.log("h",e.target.label);
     Meteor.call('commit',this.props.trainingPlan.details.courseId,this.props.trainingPlan.courseName)
 
   },
