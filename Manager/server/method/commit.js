@@ -32,6 +32,18 @@ Meteor.methods({
     Score.update({studentId: studentId},{$set: $set})
     console.log("MMMMM",$set);
 
+  },
+
+  refuse: function(studentId,courseId, courseName) {
+    let trainingPlan = {}
+    let key1 = `trainingPlan.${courseId}.state`
+    let key2 = `trainingPlan.${courseId}.status`
+    let $set = {}
+    $set[key1] = '未修',
+    $set[key2] = '不可选',
+    Score.update({studentId: studentId},{$set: $set})
+    console.log("MMMMM",$set);
+
   }
 
     })

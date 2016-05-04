@@ -1,10 +1,17 @@
 CommitItem = React.createClass({
   mixins: [ReactMeteorData],
 
+  getInitialState() {
+    return {
+      disabled: '',
+    }
+  },
+
   getMeteorData() {
     let sub1 = Meteor.subscribe('commit')
     let sub2 = Meteor.subscribe('users')
     let disabled = ''
+    let state
     if (sub1.ready() && sub2.ready()) {
       let studentId = Meteor.users.findOne({_id: Meteor.userId()}).profile.studentId
       let commit = Commit.findOne({studentId: studentId,courseId: this.props.trainingPlan.details.courseId})
@@ -17,12 +24,16 @@ CommitItem = React.createClass({
     }
     return {
       disabled: sub1.ready() ? disabled : '',
+      state: sub1.ready() ? state : '',
       ready: sub1.ready() && sub2.ready(),
     }
   },
 
   _onClick(e) {
     console.log("h",e.target.label);
+    this.setState({
+      disabled: 'disabled',
+    })
     Meteor.call('commit',this.props.trainingPlan.details.courseId,this.props.trainingPlan.courseName)
 
   },
@@ -67,12 +78,7 @@ CommitItem = React.createClass({
         <div>
           <div style={styles.courseName}>{this.props.trainingPlan.courseName}</div>
           <div style={styles.button}>
-            <RaisedButton
-              label="Secondary"
-              secondary={true}
-              disabled={this.data.disabled}
-              onTouchEnd={this._onClick}
-              onMouseDown={this._onClick} />
+            <input type='button' value={this.data.state || '申请选课'} disabled={this.data.disabled || this.state.disabled} onClick={this._onClick}/>
             </div>
         </div>
         <div style={styles.d2}>

@@ -6,6 +6,8 @@ CommitItem = React.createClass({
     if (state == '同意') {
       Meteor.call('chanSch', this.props.commit.studentId, this.props.commit.courseId,state)
       Meteor.call('chanSco', this.props.commit.studentId, this.props.commit.courseId, this.props.commit.courseName,state)
+    } else {
+      Meteor.call('refuse', this.props.commit.studentId, this.props.commit.courseId, this.props.commit.courseName,state)
     }
   },
   render() {
