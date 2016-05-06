@@ -64,12 +64,7 @@ ShowTrainingPlan = React.createClass({
     }
     return (
       <div>
-        <div className="col-md-9" style={styles.titleStyle}>
-          <label>2016届培养计划</label>
-        </div>
-        <div>
-          {this.rendercourse()}
-        </div>
+        {this.rendercourse()}
       </div>
     )
   }

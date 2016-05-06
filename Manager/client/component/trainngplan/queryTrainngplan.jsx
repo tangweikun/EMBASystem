@@ -29,7 +29,7 @@ QueryTrainngplan = React.createClass({
         marginLeft: '50px',
       },
       text: {
-        width: '170px',
+        width: '250px',
         marginRight: '20px',
       },
       label: {
