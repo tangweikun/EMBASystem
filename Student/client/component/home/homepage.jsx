@@ -42,6 +42,7 @@ HomePage = React.createClass({
             leftIcon={<i className="fa fa-calendar fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             primaryText="培养计划"
             onMouseEnter={this.onTouchTap}
+            onTouchTap={this.onTouchTap}
             rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
           />
           <Divider />
@@ -57,22 +58,19 @@ HomePage = React.createClass({
               rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
               primaryText="我的成绩"
             />
-            <Divider />
-        </List>
-
-        <List>
-          <ListItem
-            leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
-            primaryText="讲座公告"
-            rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#ffffff',lineHeight: '24px'}}></i>}
-          />
           <Divider />
-          <ListItem
-            leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
-            primaryText="活动公告"
-            rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
-          />
-          <Divider />
+            <ListItem
+              leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
+              primaryText="讲座公告"
+              rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
+            />
+         <Divider />
+            <ListItem
+                leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
+                primaryText="活动公告"
+                rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
+              />
+              <Divider />
         </List>
       </div>
     )
