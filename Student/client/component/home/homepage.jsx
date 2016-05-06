@@ -37,54 +37,43 @@ HomePage = React.createClass({
 
     return (
       <div>
-        <ListItem
-          leftIcon={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
-          primaryText={ "汤伟坤"  }
-          secondaryText={
-            <p>
-              <span style={{color: 'gray'}}>班级：信管121</span>
-            </p>
-          }
-        />
-        <Divider inset={true} />
         <List>
           <ListItem
-            leftIcon={<img src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
-            primaryText="我的培养计划"
+            leftIcon={<i className="fa fa-calendar fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
+            primaryText="培养计划"
             onMouseEnter={this.onTouchTap}
+            rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
           />
-          <Divider inset={true} />
+          <Divider />
           <ListItem
-            leftIcon={<i className="fa fa-university fa-2x" aria-hidden="true" style={{color: 'red'}}></i>}
-            primaryText="我的课程表"
+            leftIcon={<i className="fa fa-book fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
+            primaryText="课程表"
+            rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             onTouchTap={this.onTouchTap}
           />
-          <Divider inset={true} />
+          <Divider />
             <ListItem
-              leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
+              leftIcon={<i className="fa fa-graduation-cap fa-lg" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
+              rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
               primaryText="我的成绩"
             />
-            <Divider inset={true} />
+            <Divider />
         </List>
 
         <List>
           <ListItem
-            leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
+            leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             primaryText="讲座公告"
+            rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#ffffff',lineHeight: '24px'}}></i>}
           />
-          <Divider inset={true} />
+          <Divider />
           <ListItem
-            leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
+            leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             primaryText="活动公告"
+            rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
           />
-          <Divider inset={true} />
+          <Divider />
         </List>
-
-        <ListItem
-          leftAvatar={<Avatar src="http://ijiankang2.kss.ksyun.com/avatar/u4u7HBmehxKRjHBaZ.png?1460973269798" />}
-          primaryText="我要选课"
-        />
-        <Divider inset={true} />
       </div>
     )
   }
