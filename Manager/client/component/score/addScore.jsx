@@ -2,11 +2,27 @@ AddScore = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
+    const month = Number(moment().format('MM'))  //获取当前月份
+    let year = Number(moment().format('YYYY'))  //获取当前年份
+    let season
+    if (month > 0 && month < 2) {
+      season = '秋'
+      year = year - 1
+      semester = year + season
+    }
+    if (month > 1 && month < 8) {
+      season = '春'
+      semester = year + season
+    }
+    if (month > 8) {
+      season = '秋'
+      semester = year + season
+    }
     let sub1 = Meteor.subscribe('score')
     let sub2 = Meteor.subscribe('schedule')
     let score = Score.find({}).fetch()
     let schedule = Schedule.find({}).fetch()
-    let oneSchedule = Schedule.findOne({courseName: this.props.courseName})
+    let oneSchedule = Schedule.findOne({courseName: this.props.courseName, semester: semester})
     return {
       score: sub1.ready() ? score : null,
       schedule: sub2.ready() ? schedule : null,
