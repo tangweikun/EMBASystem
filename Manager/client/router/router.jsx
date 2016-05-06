@@ -1,3 +1,11 @@
+//按9月为划分
+const month = Number(moment().format('MM'))  //获取当前月份
+const year = Number(moment().format('YYYY'))  //获取当前年份
+const diff = month > 8 ? 0 : 1
+const year1 = year - diff
+const year2 = year - diff - 1
+console.log(month,year,diff,year1,year2);
+
 FlowRouter.route('/', {
   action: function() {
     ReactLayout.render(Layout, {content: <Home />})
@@ -30,7 +38,19 @@ FlowRouter.route('/addtrainingplan', {
 
 FlowRouter.route('/showtrainingplan', {
   action: function() {
-    ReactLayout.render(Layout, {content: <ShowTrainingPlan />})
+    ReactLayout.render(Layout, {content: <QueryTrainngplan />})
+  }
+})
+
+FlowRouter.route(`/showtrainingplan${year1}`, {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowTrainingPlan annual={year1} />})
+  }
+})
+
+FlowRouter.route(`/showtrainingplan${year2}`, {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowTrainingPlan annual={year2} />})
   }
 })
 

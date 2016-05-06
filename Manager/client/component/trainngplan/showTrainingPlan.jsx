@@ -2,8 +2,10 @@ ShowTrainingPlan = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let sub = Meteor.subscribe('trainingPlan');
-    let course = TrainingPlan.find({}).fetch();
+    let sub = Meteor.subscribe('trainingPlan')
+    console.log(this.props.annual)
+
+    let course = TrainingPlan.find({annual: String(this.props.annual)}).fetch()
     return {
       course:sub.ready() ? course : null,
       ready: sub.ready(),

@@ -6,9 +6,28 @@ Nav = React.createClass({
         borderRight: 'solid 1px #DDDDDD',
       }
     }
+
+    //按9月为划分
+    const month = Number(moment().format('MM'))  //获取当前月份
+    const year = Number(moment().format('YYYY'))  //获取当前年份
+    const diff = month > 8 ? 0 : 1
+    const year1 = year - diff
+    const year2 = year - diff - 1
+    console.log(month,year,diff,year1,year2);
+
     return (
     <div style={styles.sty1}>
       <List subheader="培养计划">
+      <ListItem
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
+        primaryText={year1 + "届培养计划"}
+        href={FlowRouter.path(`/showtrainingplan${year1}`)}
+      />
+      <ListItem
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
+        primaryText={year2 + "届培养计划"}
+        href={FlowRouter.path(`/showtrainingplan${year2}`)}
+      />
       <ListItem
         leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
         primaryText="历届培养计划"
