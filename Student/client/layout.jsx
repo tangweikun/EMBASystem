@@ -51,16 +51,16 @@ Layout = React.createClass({
         <div style={styles.footer}>
           <label style={styles.label}>
             <a href='/'>
-              <i className="fa fa-bars fa-2x" aria-hidden="true" style={{color:'#ffffff'}}></i>
+              <i className="fa fa-search fa-2x" aria-hidden="true" style={{color:'#ffffff'}}></i>
             </a>
           </label>
           <label style={styles.label}>
-            <a href='/score'>
-              <i className="fa fa-compass fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
+            <a href='/commit'>
+              <i className="fa fa-plus fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
             </a>
           </label>
           <label style={styles.label}>
-            <a href='/login'>
+            <a href='/'>
               <i className="fa fa-user-secret fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
             </a>
           </label>

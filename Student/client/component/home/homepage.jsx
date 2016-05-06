@@ -1,9 +1,23 @@
 HomePage = React.createClass({
 
-  onTouchTap() {
-    console.log("twk");
+  onTouchTap1() {
     FlowRouter.go('/train')
-    return null
+  },
+
+  onTouchTap2() {
+    FlowRouter.go('/schedule')
+  },
+
+  onTouchTap3() {
+    FlowRouter.go('/score')
+  },
+
+  onTouchTap4() {
+    FlowRouter.go('/')
+  },
+
+  onTouchTap5() {
+    FlowRouter.go('/')
   },
 
   render() {
@@ -41,14 +55,16 @@ HomePage = React.createClass({
           <ListItem
             leftIcon={<i className="fa fa-calendar fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             primaryText="培养计划"
-            onMouseEnter={this.onTouchTap}
-            onTouchTap={this.onTouchTap}
+            onMouseEnter={this.onTouchTap1}
+            onTouchTap={this.onTouchTap1}
             rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
           />
           <Divider />
           <ListItem
             leftIcon={<i className="fa fa-book fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             primaryText="课程表"
+            onMouseEnter={this.onTouchTap2}
+            onTouchTap={this.onTouchTap2}
             rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             onTouchTap={this.onTouchTap}
           />
@@ -57,17 +73,23 @@ HomePage = React.createClass({
               leftIcon={<i className="fa fa-graduation-cap fa-lg" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
               rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
               primaryText="我的成绩"
+              onMouseEnter={this.onTouchTap3}
+              onTouchTap={this.onTouchTap3}
             />
           <Divider />
             <ListItem
               leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
               primaryText="讲座公告"
+              onMouseEnter={this.onTouchTap4}
+              onTouchTap={this.onTouchTap4}
               rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
             />
          <Divider />
             <ListItem
                 leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
                 primaryText="活动公告"
+                onMouseEnter={this.onTouchTap5}
+                onTouchTap={this.onTouchTap5}
                 rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
               />
               <Divider />
