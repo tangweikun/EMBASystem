@@ -12,10 +12,28 @@ ShowSchedule = React.createClass({
     let count1
     let count2
     let all2 = []
+    //按9月为划分
+    const month = Number(moment().format('MM'))  //获取当前月份
+    let year = Number(moment().format('YYYY'))  //获取当前年份
+    let season
+    if (month > 0 && month < 2) {
+      season = '秋'
+      year = year - 1
+      semester = year + season
+    }
+    if (month > 1 && month < 8) {
+      season = '春'
+      semester = year + season
+    }
+    if (month > 8) {
+      season = '秋'
+      semester = year + season
+    }
+    console.log(month,year,season,semester);
 
 
     if (sub.ready()) {
-      schedule = Schedule.find({}).fetch();
+      schedule = Schedule.find({semester: semester}).fetch();
       count1 = schedule.length
       for (let i = 0; i < count1; i++) {
         detailsList.push(schedule[i].details)
