@@ -66,10 +66,14 @@ AddStudent = React.createClass({
         fontSize: '22px',
         marginTop: '20px',
       },
+      paddingLeft: {
+        paddingLeft: '15px',
+      },
+
     }
 
     return (
-      <form className="" ref="form" onSubmit={this.onSubmit}>
+      <form style={styles.paddingLeft} ref="form" onSubmit={this.onSubmit}>
         <div style={styles.titleStyle}>
           <label>录入学员信息</label>
         </div>

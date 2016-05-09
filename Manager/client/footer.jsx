@@ -16,7 +16,7 @@ Footer = React.createClass({
     }
     return (
       <div style={footer}>
-        Powered by Meteor 1.3 | Designed by 河北工业大学EMBA教育中心
+        Powered by Meteor 1.2 | Designed by 河北工业大学EMBA教育中心
       </div>
     )
   }

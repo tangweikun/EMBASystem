@@ -54,7 +54,7 @@ ShowScore = React.createClass({
       },
     }
     return (
-      <div>
+      <div style={{paddingLeft: '15px'}}>
         <div style={styles.titleStyle}>
           <label>查询成绩</label>
         </div>

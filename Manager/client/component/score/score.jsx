@@ -42,7 +42,7 @@ TScore = React.createClass({
     }
 
     return (
-      <div>
+      <div style={{paddingLeft: '15px'}}>
         <div style={styles.titleStyle}>
           <label>录入成绩</label>
         </div>

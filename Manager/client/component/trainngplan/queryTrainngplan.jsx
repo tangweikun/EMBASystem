@@ -42,10 +42,13 @@ QueryTrainngplan = React.createClass({
         fontSize: '22px',
         marginTop: '20px',
       },
+      paddingLeft: {
+        paddingLeft: '15px',
+      }
     }
 
     return (
-      <div>
+      <div style={styles.paddingLeft}>
         <div style={styles.titleStyle}>
           <label>历届培养计划</label>
         </div>

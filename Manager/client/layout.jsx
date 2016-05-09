@@ -24,7 +24,6 @@ Layout = React.createClass({
         height: (standHeight - 105) + 'px',
         float: 'left',
         width: (standWidth - 260) + 'px',
-        marginLeft: '30px',
       },
       footer: {
         position: 'fixed',
