@@ -8,7 +8,7 @@ Header = React.createClass({
       width: screenWidth,
     }
     return (
-      <div style={header} className="row">
+      <div style={header}>
         <AppBar
           title="河北工业大学EMBA综合管理系统"
           showMenuIconButton={false}

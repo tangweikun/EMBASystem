@@ -29,7 +29,7 @@ Layout = React.createClass({
       }
     }
     return (
-      <div style={layout} className="container">
+      <div style={layout}>
         <Header />
         <div style={styles.body} className='row'>
           <div style={styles.nav} className='col-md-3'>

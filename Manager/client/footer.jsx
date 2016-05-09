@@ -15,7 +15,7 @@ Footer = React.createClass({
       lineHeight: '35px',
     }
     return (
-      <div style={footer} className="row">
+      <div style={footer}>
         Powered by Meteor 1.3 | Designed by 河北工业大学EMBA教育中心
       </div>
     )
