@@ -21,7 +21,9 @@ QueryTrainngplan = React.createClass({
       div1: {
         // width: screenWidth,
         // paddingLeft: '50px',
-        marginBottom: '20px',
+        marginBottom: '15px',
+        marginTop: '15px',
+        paddingLeft: '15px',
         // marginTop: '15px',
       },
       button: {
@@ -48,10 +50,7 @@ QueryTrainngplan = React.createClass({
     }
 
     return (
-      <div style={styles.paddingLeft}>
-        <div style={styles.titleStyle}>
-          <label>历届培养计划</label>
-        </div>
+      <div>
         <div style={styles.div1}>
           <TextField
             id="annual"

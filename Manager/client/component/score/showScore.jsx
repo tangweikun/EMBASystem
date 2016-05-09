@@ -2,23 +2,17 @@ ShowScore = React.createClass({
 
   getInitialState() {
     return {
-      content: false
+      courseName: '',
     }
   },
 
-
-  _txtBlur(e) {
-    // this.state.content = e.target.value
-    this.setState({
-      content: e.target.value
-    })
-    console.log("000",e.target.value,this.state.content);
-
+  handleClick() {
+    let courseName = document.getElementById('courseName').value.trim()
+    this.setState({courseName: courseName})
   },
 
   renderScore() {
-    console.log("message",this.state.content);
-    return this.state.content ? <ScoreItem2 courseName={this.state.content}/> : null
+    return this.state.courseName ? <ScoreItem2 courseName={this.state.courseName}/> : null
   },
 
   render() {
@@ -63,8 +57,8 @@ ShowScore = React.createClass({
             id="courseName"
             hintText="请在此输入课程名称"
             style={styles.text}
-            onBlur={this._txtBlur}
             />
+          <RaisedButton label='查询成绩' secondary={true} onMouseDown={this.handleClick}/>
         <div>
           {this.renderScore()}
         </div>
