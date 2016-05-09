@@ -31,7 +31,7 @@ Layout = React.createClass({
         zIndex: '1',
         bottom: 0,
         width: standWidth,
-      }
+      },
     }
     return (
       <div style={layout}>
