@@ -15,11 +15,15 @@ Layout = React.createClass({
       },
       nav: {
         overflow: 'scroll',
-        height: (standHeight - 99) + 'px',
+        height: (standHeight - 105) + 'px',
+        width: '230px',
+        float: 'left',
       },
       container: {
         overflow: 'scroll',
-        height: (standHeight - 99) + 'px',
+        height: (standHeight - 105) + 'px',
+        float: 'left',
+        width: (standWidth - 230) + 'px',
       },
       footer: {
         position: 'fixed',
@@ -31,11 +35,11 @@ Layout = React.createClass({
     return (
       <div style={layout}>
         <Header />
-        <div style={styles.body} className='row'>
-          <div style={styles.nav} className='col-md-3'>
+        <div style={styles.body}>
+          <div style={styles.nav}>
             <Nav />
           </div>
-          <div style={styles.container} className='col-md-9'>
+          <div style={styles.container}>
             {this.props.content}
           </div>
       </div>
