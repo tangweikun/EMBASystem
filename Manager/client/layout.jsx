@@ -4,10 +4,28 @@ Layout = React.createClass({
     let layout = {
       position: 'relative',
       left: '0px',
+      overflow: 'hidden',
     }
+    const standHeight = window.innerHeight
+    const standWidth = window.innerWidth
     const styles = {
       body: {
         marginTop: '65px',
+        overflow: 'hidden',
+      },
+      nav: {
+        overflow: 'scroll',
+        height: (standHeight - 99) + 'px',
+      },
+      container: {
+        overflow: 'scroll',
+        height: (standHeight - 99) + 'px',
+      },
+      footer: {
+        position: 'fixed',
+        zIndex: '1',
+        bottom: 0,
+        width: standWidth,
       }
     }
     return (
@@ -21,6 +39,7 @@ Layout = React.createClass({
             {this.props.content}
           </div>
       </div>
+      <Footer />
       </div>
     )
   }
