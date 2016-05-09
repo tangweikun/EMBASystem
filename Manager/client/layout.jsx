@@ -23,7 +23,8 @@ Layout = React.createClass({
         overflow: 'scroll',
         height: (standHeight - 105) + 'px',
         float: 'left',
-        width: (standWidth - 230) + 'px',
+        width: (standWidth - 260) + 'px',
+        marginLeft: '30px',
       },
       footer: {
         position: 'fixed',
