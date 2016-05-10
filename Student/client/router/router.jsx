@@ -51,3 +51,15 @@ FlowRouter.route('/commit', {
     ReactLayout.render(Layout, {content: <ShowCommit />})
   }
 });
+
+FlowRouter.route('/lecture', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowLecture />})
+  }
+});
+
+FlowRouter.route('/activity', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowActivity />})
+  }
+});

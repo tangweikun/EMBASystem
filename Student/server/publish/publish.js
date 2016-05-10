@@ -21,3 +21,11 @@ Meteor.publish('score', function() {
 Meteor.publish('commit', function() {
   return Commit.find({})
 })
+
+Meteor.publish('lecture', function() {
+  return Lecture.find({});
+})
+
+Meteor.publish('activity', function() {
+  return Activity.find({});
+})

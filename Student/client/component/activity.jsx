@@ -1,0 +1,79 @@
+ShowActivity = React.createClass({
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    let sub = Meteor.subscribe('activity')
+    let activity = Activity.find({}).fetch()
+    return {
+      activity: activity,
+      ready: sub.ready(),
+    }
+  },
+
+  renderTeacher() {
+    const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
+    const styles = {
+      span1: {
+        marginRight: '8px',
+        // width: '20px',
+      },
+      span2: {
+        marginRight: '36px',
+        // width: ''
+      },
+      span3: {
+        marginRight: '20px',
+        width: '140px',
+      },
+      div1: {
+        marginTop: '10px',
+      },
+    }
+    return this.data.activity.map(function(a,n){
+      return (
+        <div key={n} className='col-md-9'>
+        <ListItem
+          primaryText={a.topic}
+          secondaryText={
+            <div>
+            <div style={styles.div1}>
+              <span style={styles.span1}>讲座人</span>
+              <span style={styles.span3}>{a.speaker}</span>
+              <span style={styles.span1}>地点</span>
+              <span style={styles.span2}>{a.where}</span>
+              <span style={styles.span1}>日期</span>
+              <span style={styles.span3}>{a.date}</span>
+              <span style={styles.span1}>时间</span>
+              <span style={styles.span3}>{a.time}</span>
+            </div>
+          </div>
+          }
+          secondaryTextLines={2}
+        />
+      <Divider />
+        </div>
+      )
+    })
+  },
+
+  render() {
+    if (!this.data.ready) return null
+    const styles = {
+      titleStyle: {
+        fontSize: '22px',
+        marginTop: '20px',
+        marginBottom: '10px',
+      },
+    }
+    return (
+      <div>
+        <div className="col-md-9" style={styles.titleStyle}>
+          <span>讲座列表</span>
+        </div>
+        <div>
+          {this.renderTeacher()}
+        </div>
+      </div>
+    )
+  }
+})
