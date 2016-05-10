@@ -1,27 +1,58 @@
 Login = React.createClass({
+
+  getInitialState() {
+    return {
+      open: false,
+    }
+  },
+
+  handleOpen() {
+    this.setState({
+      open: true,
+    })
+  },
+
+  handleClose() {
+    this.setState({
+      open: false,
+    })
+  },
+
   onSubmit(event) {
     event.preventDefault()
     let username = document.getElementById('username').value.trim()
     let password = document.getElementById('password').value.trim()
-    console.log("<<<",username,password);
-
+    let user = Meteor.users.findOne({username: username})
+    if (!user) {
+      this.handleOpen()
+      document.getElementById('username').value = ''
+      document.getElementById('password').value = ''
+      return
+    }
+    let profile = user.profile
+    if (profile.roles != 'student' || profile.state != '在校') return
     Meteor.loginWithPassword( username, password,
     function (err) {
-      console.log("CCC");
-
       console.log(err, arguments)
       if (!err) {
         FlowRouter.go('/')
         return
-      } else {
-        console.log("wrong password");
       }
     })
-    console.log("NNN");
-
+    this.handleOpen()
+    document.getElementById('password').value = ''
   },
   render() {
-    const { RaisedButton, TextField, AppBar } = MUI
+    const { RaisedButton, TextField, AppBar, Dialog, FlatButton } = MUI
+    const actions = [
+      <FlatButton
+        label="确定"
+        secondary={true}
+        onTouchTap={this.handleClose}
+        onMouseDown={this.handleClose}
+        keyboardFocused={true}
+      />,
+    ]
     const screenWidth = window.innerWidth
     const styles = {
       form: {
@@ -45,6 +76,17 @@ Login = React.createClass({
       },
       bar: {
         marginBottom: screenWidth * 0.156,
+      },
+      contentStyle: {
+        width: screenWidth * 0.667,  //'250px',
+        left: screenWidth * 0.813,   //'-305px',
+        top: screenWidth * 0.053,  //'-20px',
+      },
+      bodyStyle: {
+        fontSize: '16px',
+      },
+      overlayStyle: {
+        width: '0px',
       },
     }
     return (
@@ -79,9 +121,19 @@ Login = React.createClass({
           secondary={true}
           style={styles.button}
           onMouseEnter={this.onSubmit}
-
           onTouchEnd={this.onSubmit}
         />
+        <Dialog
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          contentStyle={styles.contentStyle}
+          onRequestClose={this.handleClose}
+          overlayStyle={styles.overlayStyle}
+          bodyStyle={styles.bodyStyle}
+        >
+        用户名不存在或者密码错误
+        </Dialog>
       </div>
       </form>
     )
