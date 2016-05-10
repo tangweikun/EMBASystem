@@ -5,17 +5,19 @@ ShowManager = React.createClass({
     let sub = Meteor.subscribe("users");
     let manager = Meteor.users.find({roles: 'manager'}).fetch()
     return {
-      manager:sub.ready() ? manager : null
+      manager:sub.ready() ? manager : null,
+      ready: sub.ready(),
     }
   },
 
   rendermanager() {
-    return this.data.manager ? this.data.manager.map(function(a,n){
+    return this.data.manager.map(function(a,n){
       return <ManagerItem manager={a} key={n} />
-    }) : null
+    })
   },
 
   render() {
+    if (!this.data.ready) return null
     return (
       <div>
         <div className="col-md-9">
