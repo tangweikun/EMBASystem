@@ -13,11 +13,11 @@ HomePage = React.createClass({
   },
 
   onTouchTap4() {
-    FlowRouter.go('/')
+    FlowRouter.go('/lecture')
   },
 
   onTouchTap5() {
-    FlowRouter.go('/')
+    FlowRouter.go('/activity')
   },
 
   render() {
