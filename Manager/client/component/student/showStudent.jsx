@@ -3,7 +3,7 @@ ShowStudent = React.createClass({
 
   getMeteorData() {
     let sub = Meteor.subscribe("users")
-    let student = Meteor.users.find({roles: 'student'}).fetch()
+    let student = Meteor.users.find({'profile.roles': 'student'}).fetch()
     return {
       student: sub.ready() ? student : null,
       ready: sub.ready(),

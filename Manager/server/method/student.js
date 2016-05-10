@@ -29,9 +29,9 @@ Meteor.methods({
         category: category,
         area: area,
         annual: annual,
+        roles: roles,
+        state: state,
       },
-      state: state,
-      roles: roles,
     }
     Meteor.users.update(query, {$set: updateData}, {upsert: true})
   },

@@ -3,7 +3,7 @@ ShowManager = React.createClass({
 
   getMeteorData() {
     let sub = Meteor.subscribe("users");
-    let manager = Meteor.users.find({roles: 'manager'}).fetch()
+    let manager = Meteor.users.find({'profile.roles': 'manager'}).fetch()
     return {
       manager:sub.ready() ? manager : null,
       ready: sub.ready(),

@@ -3,13 +3,13 @@ Meteor.methods({
     let userData = {
       username: username,
       password: password,
-      // profile: {roles: 'manager'},
+      profile: {roles: 'manager'},
     }
     Accounts.createUser(userData);
-    let query = {}
-    queryField = 'username'
-    query[queryField] = username
-    let roles = 'manager'
-    Meteor.users.update(query, {$set: {roles: roles}}, {upsert: true})
+    // let query = {}
+    // queryField = 'username'
+    // query[queryField] = username
+    // let roles = 'manager'
+    // Meteor.users.update(query, {$set: {roles: roles}}, {upsert: true})
   }
 })
