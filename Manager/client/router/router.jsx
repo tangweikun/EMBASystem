@@ -131,3 +131,27 @@ FlowRouter.route('/showtheclass', {
     ReactLayout.render(Layout, {content: <ShowClass />})
   }
 })
+
+FlowRouter.route('/addlecture', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <AddLecture />})
+  }
+})
+
+FlowRouter.route('/showlecture', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowLecture />})
+  }
+})
+
+FlowRouter.route('/addactivity', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <AddActivity />})
+  }
+})
+
+FlowRouter.route('/showactivity', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ShowActivity />})
+  }
+})

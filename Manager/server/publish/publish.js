@@ -33,3 +33,11 @@ Meteor.publish('commit', function() {
 Meteor.publish('theclass', function() {
   return TheClass.find({});
 })
+
+Meteor.publish('lecture', function() {
+  return Lecture.find({});
+})
+
+Meteor.publish('activity', function() {
+  return Activity.find({});
+})
