@@ -17,7 +17,7 @@ ShowTrainingPlan = React.createClass({
     const styles = {
       span1: {
         marginRight: '8px',
-        color: 'black',
+        color: 'rgba(0, 0, 0, .87)',
         fontWeight: 'bold',
       },
       span2: {

@@ -15,14 +15,19 @@ ShowTeacher = React.createClass({
     const styles = {
       span1: {
         marginRight: '8px',
+        color: 'rgba(0, 0, 0, .87)',
+        fontWeight: 'bold',
         // width: '20px',
+        //
       },
       span2: {
         marginRight: '36px',
+        fontWeight: 'bold',
         // width: ''
       },
       span3: {
         marginRight: '20px',
+        fontWeight: 'bold',
         width: '140px',
       },
       div1: {
@@ -33,6 +38,7 @@ ShowTeacher = React.createClass({
       return (
         <div key={n} className='col-md-9'>
         <ListItem
+          style={{color: 'black', fontWeight: 'bold'}}
           primaryText={a.teacherName}
           secondaryText={
             <div>
@@ -72,7 +78,7 @@ ShowTeacher = React.createClass({
     return (
       <div>
         <div className="col-md-9" style={styles.titleStyle}>
-          <span>教师列表</span>
+          <label>教师列表</label>
         </div>
         <div>
           {this.renderTeacher()}
