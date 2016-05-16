@@ -1,7 +1,7 @@
 Header = React.createClass({
   logout() {
-    console.log("message");
-
+    Meteor.logout()
+    FlowRouter.go('/login')
   },
   render() {
     const { AppBar, FlatButton } = MUI

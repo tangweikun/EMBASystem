@@ -40,7 +40,12 @@ Login = React.createClass({
     }
     let that = this
     let profile = user.profile
-    if (profile.roles != 'manager') return
+    if (profile.roles != 'manager') {
+      this.handleOpen()
+      document.getElementById('username').value = ''
+      document.getElementById('password').value = ''
+      return
+    }
     Meteor.loginWithPassword( username, password,
     function (err) {
       console.log(err, arguments)
@@ -50,6 +55,7 @@ Login = React.createClass({
         return
       } else {
         that.handleOpen()
+        document.getElementById('password').value = ''
       }
     })
   },
