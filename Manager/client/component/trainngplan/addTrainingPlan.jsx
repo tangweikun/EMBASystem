@@ -2,25 +2,38 @@ AddTrainingPlan = React.createClass({
 
   onSubmit(e) {
     e.preventDefault()
+    let category
+    let evaluationMode
     let courseId = document.getElementById('courseId').value.trim()
     let courseName = document.getElementById('courseName').value.trim()
-    let evaluationMode = document.getElementById('evaluationMode').value.trim()
-    let category = document.getElementById('category').value.trim()
+    // let evaluationMode = document.getElementById('evaluationMode').value.trim()
+    // let category = document.getElementById('category').value.trim()
     let credit = document.getElementById('credit').value.trim()
     let period = document.getElementById('period').value.trim()
     let annual = document.getElementById('annual').value.trim()
+    let getCategory = document.getElementsByName('category')
+    for (let i = 0; i < getCategory.length; i++) {
+      if (getCategory[i].checked) {
+        category = getCategory[i].value
+      }
+    }
+    let getEvaluationMode = document.getElementsByName('evaluationMode')
+    for (let i = 0; i < getEvaluationMode.length; i++) {
+      if (getEvaluationMode[i].checked) {
+        evaluationMode = getEvaluationMode[i].value
+      }
+    }
     Meteor.call('addTrainingPlan', courseId, courseName, category, credit, period, evaluationMode, annual)
     document.getElementById('courseId').value = ''
     document.getElementById('courseName').value = ''
-    document.getElementById('evaluationMode').value = ''
-    document.getElementById('category').value = ''
+    // document.getElementById('evaluationMode').value = ''
     document.getElementById('credit').value = ''
     document.getElementById('period').value = ''
     document.getElementById('annual').value = ''
   },
 
   render() {
-    const { RaisedButton, TextField, AppBar } = MUI
+    const { RaisedButton, TextField, AppBar, RadioButtonGroup, RadioButton, MenuItem, SelectField } = MUI
     const screenWidth = window.innerWidth
     const styles = {
       form: {
@@ -52,7 +65,18 @@ AddTrainingPlan = React.createClass({
       paddingLeft: {
         paddingLeft: '15px',
       },
+      radioButton: {
+        minWidth: '120px',
+        width: '',
+      }
     }
+    const items = [
+  <MenuItem key={1} value={1} primaryText="Never" />,
+  <MenuItem key={2} value={2} primaryText="Every Night" />,
+  <MenuItem key={3} value={3} primaryText="Weeknights" />,
+  <MenuItem key={4} value={4} primaryText="Weekends" />,
+  <MenuItem key={5} value={5} primaryText="Weekly" />,
+];
 
     return (
       <form style={styles.paddingLeft} ref="form" onSubmit={this.onSubmit}>
@@ -73,22 +97,6 @@ AddTrainingPlan = React.createClass({
             <TextField
               id="courseName"
               hintText="请输入课程名称"
-              style={styles.text}
-              />
-          </div>
-          <div>
-            <label style={styles.label}>考核方式</label>
-            <TextField
-              id="evaluationMode"
-              hintText="考核/考察"
-              style={styles.text}
-              />
-          </div>
-          <div>
-            <label style={styles.label}>类别</label>
-            <TextField
-              id="category"
-              hintText="基础课/专业核心课/必修环节"
               style={styles.text}
               />
           </div>
@@ -115,6 +123,41 @@ AddTrainingPlan = React.createClass({
               hintText="请输入年份"
               style={styles.text}
               />
+          </div>
+          <div style={{display: 'flex'}}>
+            <label style={styles.label}>考核方式</label>
+            <RadioButtonGroup name="evaluationMode" style={{display: 'flex'}}>
+              <RadioButton
+                value="考核"
+                label="考核"
+                style={{width: '110px'}}
+              />
+              <RadioButton
+                value="考察"
+                label="考察"
+                style={{width: '110px'}}
+              />
+          </RadioButtonGroup>
+          </div>
+          <div style={{display: 'flex'}}>
+            <label style={styles.label}>类别</label>
+            <RadioButtonGroup name="category" style={{display: 'flex'}}>
+              <RadioButton
+                value="基础课"
+                label="基础课"
+                style={{width: '110px'}}
+              />
+              <RadioButton
+                value="专业核心课"
+                label="专业核心课"
+                style={{width: '130px'}}
+              />
+            <RadioButton
+              value="必修环节"
+              label="必修环节"
+              style={{width: '120px'}}
+            />
+          </RadioButtonGroup>
           </div>
         </div>
         <div>
