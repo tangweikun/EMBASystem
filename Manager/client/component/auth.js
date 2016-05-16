@@ -1,5 +1,5 @@
-// Meteor.startup(function () {
-//   if (!Meteor.userId()) {
-//     FlowRouter.go('/login')
-//   }
-// })
+Meteor.startup(function () {
+  if (!Meteor.userId()) {
+    FlowRouter.go('/login')
+  }
+})
