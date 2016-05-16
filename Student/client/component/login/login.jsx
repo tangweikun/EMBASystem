@@ -1,5 +1,14 @@
 Login = React.createClass({
 
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    const sub = Meteor.subscribe('users')
+    return {
+      ready: sub.ready(),
+    }
+  },
+
   getInitialState() {
     return {
       open: false,
@@ -20,6 +29,7 @@ Login = React.createClass({
 
   onSubmit(event) {
     event.preventDefault()
+    let success
     let username = document.getElementById('username').value.trim()
     let password = document.getElementById('password').value.trim()
     let user = Meteor.users.findOne({username: username})
@@ -29,20 +39,29 @@ Login = React.createClass({
       document.getElementById('password').value = ''
       return
     }
+    let that = this
     let profile = user.profile
-    if (profile.roles != 'student' || profile.state != '在校') return
+    if (profile.roles != 'student' || profile.state != '在校') {
+      this.handleOpen()
+      document.getElementById('username').value = ''
+      document.getElementById('password').value = ''
+      return
+    }
     Meteor.loginWithPassword( username, password,
     function (err) {
       console.log(err, arguments)
       if (!err) {
         FlowRouter.go('/')
+        success = true
         return
+      } else {
+        that.handleOpen()
+        document.getElementById('password').value = ''
       }
     })
-    this.handleOpen()
-    document.getElementById('password').value = ''
   },
   render() {
+    if (!this.data.ready) return null
     const { RaisedButton, TextField, AppBar, Dialog, FlatButton } = MUI
     const actions = [
       <FlatButton
