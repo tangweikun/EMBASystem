@@ -1,6 +1,10 @@
 Header = React.createClass({
+  logout() {
+    console.log("message");
+
+  },
   render() {
-    const { AppBar } = MUI
+    const { AppBar, FlatButton } = MUI
     const screenWidth = window.innerWidth
     let header = {
       position: 'fixed',
@@ -12,6 +16,7 @@ Header = React.createClass({
         <AppBar
           title="河北工业大学EMBA综合管理系统"
           showMenuIconButton={false}
+          iconElementRight={<FlatButton label="退出" onMouseEnter={this.logout}/>}
           />
         </div>
     );

@@ -155,3 +155,9 @@ FlowRouter.route('/showactivity', {
     ReactLayout.render(Layout, {content: <ShowActivity />})
   }
 })
+
+FlowRouter.route('/login', {
+  action: function() {
+    ReactLayout.render(Login)
+  }
+})

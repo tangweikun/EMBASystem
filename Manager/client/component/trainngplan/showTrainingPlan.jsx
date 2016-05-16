@@ -17,9 +17,13 @@ ShowTrainingPlan = React.createClass({
     const styles = {
       span1: {
         marginRight: '8px',
+        color: 'black',
+        fontWeight: 'bold',
       },
       span2: {
         marginRight: '36px',
+        fontWeight: 'bold',
+        color: 'rgba(0, 0, 0, .67)',
       },
       div1: {
         marginTop: '10px',
@@ -29,6 +33,7 @@ ShowTrainingPlan = React.createClass({
       return (
         <div key={n} className='col-md-9'>
         <ListItem
+          style={{color: 'black', fontWeight: 'bold'}}
           primaryText={a.courseName}
           secondaryText={
             <div>
