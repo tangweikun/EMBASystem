@@ -94,7 +94,7 @@ Nav = React.createClass({
     <Divider />
     <List subheader="选课管理">
       <ListItem
-        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-envelope-o" aria-hidden="true"></i>} />}
         primaryText="选课申请"
         href={FlowRouter.path('/showcommit')}
     />
@@ -115,7 +115,7 @@ Nav = React.createClass({
     <Divider />
       <List subheader="活动管理">
         <ListItem
-          leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
+          leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-cube" aria-hidden="true"></i>} />}
           primaryText="活动列表"
           href={FlowRouter.path('/showlecture')}
         />
@@ -128,7 +128,7 @@ Nav = React.createClass({
       <Divider />
         <List subheader="讲座管理">
           <ListItem
-            leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-book" aria-hidden="true"></i>} />}
+            leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-leaf" aria-hidden="true"></i>} />}
             primaryText="讲座列表"
             href={FlowRouter.path('/showactivity')}
           />
