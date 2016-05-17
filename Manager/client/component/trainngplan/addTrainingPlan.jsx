@@ -1,5 +1,23 @@
 AddTrainingPlan = React.createClass({
 
+  getInitialState() {
+    return {
+      open: false,
+    }
+  },
+
+  handleOpen() {
+    this.setState({
+      open: true,
+    })
+  },
+
+  handleClose() {
+    this.setState({
+      open: false,
+    })
+  },
+
   onSubmit(e) {
     e.preventDefault()
     let category
@@ -23,6 +41,10 @@ AddTrainingPlan = React.createClass({
         evaluationMode = getEvaluationMode[i].value
       }
     }
+    if (!courseId || !courseName || !credit || !category || !period || !evaluationMode || !annual) {
+      this.handleOpen()
+      return
+    }
     Meteor.call('addTrainingPlan', courseId, courseName, category, credit, period, evaluationMode, annual)
     document.getElementById('courseId').value = ''
     document.getElementById('courseName').value = ''
@@ -32,7 +54,16 @@ AddTrainingPlan = React.createClass({
   },
 
   render() {
-    const { RaisedButton, TextField, AppBar, RadioButtonGroup, RadioButton, MenuItem, SelectField } = MUI
+    const { RaisedButton, TextField, AppBar, RadioButtonGroup, RadioButton, MenuItem, SelectField, FlatButton, Dialog } = MUI
+    const actions = [
+      <FlatButton
+        label="确定"
+        secondary={true}
+        onTouchTap={this.handleClose}
+        onMouseDown={this.handleClose}
+        keyboardFocused={true}
+      />,
+    ]
     const screenWidth = window.innerWidth
     const styles = {
       form: {
@@ -67,7 +98,18 @@ AddTrainingPlan = React.createClass({
       radioButton: {
         minWidth: '120px',
         width: '',
-      }
+      },
+      contentStyle: {
+        width: '350px',  //'250px',
+        left: '55px',   //'-305px',
+        top: '-60px',  //'-20px',
+      },
+      bodyStyle: {
+        fontSize: '16px',
+      },
+      overlayStyle: {
+        width: '0px',
+      },
     }
     const items = [
   <MenuItem key={1} value={1} primaryText="Never" />,
@@ -171,6 +213,17 @@ AddTrainingPlan = React.createClass({
             style={styles.button}
             onMouseDown={this.onSubmit}
           />
+          <Dialog
+            actions={actions}
+            modal={false}
+            open={this.state.open}
+            contentStyle={styles.contentStyle}
+            onRequestClose={this.handleClose}
+            overlayStyle={styles.overlayStyle}
+            bodyStyle={styles.bodyStyle}
+          >
+          请检查所填内容，信息内容不得为空
+          </Dialog>
         </div>
       </form>
     )
