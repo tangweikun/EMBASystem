@@ -61,7 +61,7 @@ Layout = React.createClass({
           </label>
           <label style={styles.label}>
             <a href='/'>
-              <i className="fa fa-user-secret fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
+              <i className="fa fa-cog fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
             </a>
           </label>
         </div>
