@@ -26,7 +26,6 @@ AddTrainingPlan = React.createClass({
     Meteor.call('addTrainingPlan', courseId, courseName, category, credit, period, evaluationMode, annual)
     document.getElementById('courseId').value = ''
     document.getElementById('courseName').value = ''
-    // document.getElementById('evaluationMode').value = ''
     document.getElementById('credit').value = ''
     document.getElementById('period').value = ''
     document.getElementById('annual').value = ''
@@ -128,13 +127,13 @@ AddTrainingPlan = React.createClass({
             <label style={styles.label}>考核方式</label>
             <RadioButtonGroup name="evaluationMode" style={{display: 'flex'}}>
               <RadioButton
-                value="考核"
-                label="考核"
+                value="考试"
+                label="考试"
                 style={{width: '110px'}}
               />
               <RadioButton
-                value="考察"
-                label="考察"
+                value="考查"
+                label="考查"
                 style={{width: '110px'}}
               />
           </RadioButtonGroup>
@@ -157,6 +156,11 @@ AddTrainingPlan = React.createClass({
               label="必修环节"
               style={{width: '120px'}}
             />
+            <RadioButton
+              value="专业选修课"
+              label="专业选修课"
+              style={{width: '130px'}}
+            />
           </RadioButtonGroup>
           </div>
         </div>
@@ -172,3 +176,8 @@ AddTrainingPlan = React.createClass({
     )
   }
 })
+
+
+for (var i = 0; i < array.length; i++) {
+  array[i]
+}
