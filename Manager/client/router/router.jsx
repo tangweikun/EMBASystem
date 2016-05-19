@@ -161,3 +161,9 @@ FlowRouter.route('/login', {
     ReactLayout.render(Login)
   }
 })
+
+FlowRouter.route('/changepassword', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <ChangePassword />})
+  }
+})

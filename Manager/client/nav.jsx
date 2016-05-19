@@ -26,7 +26,7 @@ Nav = React.createClass({
         <ListItem
           leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-cog" aria-hidden="true"></i>} />}
           primaryText="修改密码"
-          href={FlowRouter.path('/')}
+          href={FlowRouter.path('/changepassword')}
         />
       </List>
       <Divider />
