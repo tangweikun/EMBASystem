@@ -89,8 +89,8 @@ ChangePassword = React.createClass({
       },
       contentStyle: {
         width: '260px',  //'250px',
-        left: '15px',   //'-305px',
-        top: '-180px',  //'-20px',
+        left: '-55px',   //'-305px',
+        top: '-90px',  //'-20px',
       },
       bodyStyle: {
         fontSize: '16px',
