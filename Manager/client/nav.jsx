@@ -17,17 +17,20 @@ Nav = React.createClass({
 
     return (
     <div style={styles.sty1}>
+      <List subheader="基础信息">
+        <ListItem
+          leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-th-large" aria-hidden="true"></i>} />}
+          primaryText="首页"
+          href={FlowRouter.path('/')}
+        />
+        <ListItem
+          leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-cog" aria-hidden="true"></i>} />}
+          primaryText="修改密码"
+          href={FlowRouter.path('/')}
+        />
+      </List>
+      <Divider />
       <List subheader="培养计划">
-      <ListItem
-        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
-        primaryText={year1 + "届培养计划"}
-        href={FlowRouter.path(`/showtrainingplan${year1}`)}
-      />
-      <ListItem
-        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
-        primaryText={year2 + "届培养计划"}
-        href={FlowRouter.path(`/showtrainingplan${year2}`)}
-      />
       <ListItem
         leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-graduation-cap" aria-hidden="true"></i>} />}
         primaryText="历届培养计划"
@@ -55,7 +58,7 @@ Nav = React.createClass({
     <Divider />
     <List subheader="班级管理">
       <ListItem
-        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-university" aria-hidden="true"></i>} />}
+        leftAvatar={<Avatar backgroundColor='#00bcd4' icon={<i className="fa fa-list-ul" aria-hidden="true"></i>} />}
         primaryText="班级列表"
         href={FlowRouter.path('/showtheclass')}
       />

@@ -1,8 +1,12 @@
 QueryTrainngplan = React.createClass({
 
   getInitialState() {
+    //按9月为划分
+    const month = Number(moment().format('MM'))  //获取当前月份
+    const diff = month > 8 ? 0 : 1
+    const year = Number(moment().format('YYYY')) - diff //获取当前年份
     return {
-      annual: '',
+      annual: year,
     }
   },
 
@@ -24,6 +28,7 @@ QueryTrainngplan = React.createClass({
         marginBottom: '15px',
         marginTop: '15px',
         paddingLeft: '15px',
+        float: 'right',
         // marginTop: '15px',
       },
       button: {
@@ -59,7 +64,7 @@ QueryTrainngplan = React.createClass({
             />
           <RaisedButton label='查询' secondary={true} onMouseDown={this.handleClick}/>
         </div>
-        <div>
+        <div style={{float: 'left',clear: 'both'}}>
           <ShowTrainingPlan annual={this.state.annual} />
         </div>
       </div>
