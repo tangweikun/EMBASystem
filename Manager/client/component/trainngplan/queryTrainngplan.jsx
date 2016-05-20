@@ -25,10 +25,11 @@ QueryTrainngplan = React.createClass({
       div1: {
         // width: screenWidth,
         // paddingLeft: '50px',
-        marginBottom: '15px',
-        marginTop: '15px',
-        paddingLeft: '15px',
-        float: 'right',
+        // marginBottom: '15px',
+        // marginTop: '15px',
+        // paddingLeft: '15px',
+        // display:
+        // float: 'right',
         // marginTop: '15px',
       },
       button: {
@@ -36,7 +37,7 @@ QueryTrainngplan = React.createClass({
         marginLeft: '50px',
       },
       text: {
-        width: '250px',
+        width: '160px',
         marginRight: '20px',
       },
       label: {
@@ -47,22 +48,39 @@ QueryTrainngplan = React.createClass({
       },
       titleStyle: {
         fontSize: '22px',
-        marginTop: '20px',
+        // marginTop: '15px',
+        float: 'left',
+        // display: 'inline-block',
       },
       paddingLeft: {
         paddingLeft: '15px',
-      }
+      },
+      bar: {
+        width: '520px',
+      },
     }
 
     return (
       <div>
         <div style={styles.div1}>
-          <TextField
-            id="annual"
-            hintText="请在此输入培养计划届数"
-            style={styles.text}
-            />
-          <RaisedButton label='查询' secondary={true} onMouseDown={this.handleClick}/>
+          { this.state.annual ?
+              <div style={styles.titleStyle}>
+                  <AppBar
+                    title={`${this.state.annual}届培养计划`}
+                    showMenuIconButton={false}
+                    style={styles.bar}
+                    />
+              </div> : null
+          }
+          <div style={{float: 'right', marginTop: '15px'}}>
+            <TextField
+              id="annual"
+              hintText="输入届数,如‘2013’"
+              style={styles.text}
+              />
+            <RaisedButton label='查询' secondary={true} onMouseDown={this.handleClick}/>
+          </div>
+
         </div>
         <div style={{float: 'left',clear: 'both'}}>
           <ShowTrainingPlan annual={this.state.annual} />
