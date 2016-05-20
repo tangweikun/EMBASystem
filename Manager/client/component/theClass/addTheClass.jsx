@@ -43,17 +43,21 @@ AddTheClass = React.createClass({
       },
       titleStyle: {
         fontSize: '22px',
-        marginTop: '20px',
+        // marginTop: '20px',
       },
-      paddingLeft: {
-        paddingLeft: '15px',
+      bar: {
+        width: '560px',
       },
     }
 
     return (
-      <form style={styles.paddingLeft} ref="form" onSubmit={this.onSubmit}>
+      <form ref="form" onSubmit={this.onSubmit}>
         <div style={styles.titleStyle}>
-          <label>录入班级信息</label>
+          <AppBar
+            title='录入班级信息'
+            showMenuIconButton={false}
+            style={styles.bar}
+            />
         </div>
         <div style={styles.div1}>
           <div>
