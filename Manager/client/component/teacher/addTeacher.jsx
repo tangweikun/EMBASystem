@@ -31,6 +31,7 @@ AddTeacher = React.createClass({
         paddingLeft: '50px',
         marginBottom: '20px',
         marginTop: '15px',
+        color: 'black',
       },
       button: {
         width: '350px',
@@ -48,6 +49,7 @@ AddTeacher = React.createClass({
       titleStyle: {
         fontSize: '22px',
         marginTop: '20px',
+        color: 'black',
       },
       paddingLeft: {
         paddingLeft: '15px',
