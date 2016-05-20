@@ -41,7 +41,7 @@ TScore = React.createClass({
         // marginTop: '20px',
       },
       bar: {
-        width: '520px',
+        width: '400px',
       },
     }
 
@@ -58,7 +58,7 @@ TScore = React.createClass({
           <div style={{float: 'right', marginTop: '15px'}}>
             <TextField
               id="courseName"
-              hintText="请在此输入课程名称"
+              hintText="在此输入课程名称"
               style={styles.text}
               />
             <RaisedButton label='确定' secondary={true} onMouseDown={this.handleClick}/>
