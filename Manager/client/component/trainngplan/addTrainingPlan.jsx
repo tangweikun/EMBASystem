@@ -90,10 +90,7 @@ AddTrainingPlan = React.createClass({
       },
       titleStyle: {
         fontSize: '22px',
-        marginTop: '20px',
-      },
-      paddingLeft: {
-        paddingLeft: '15px',
+        // marginTop: '20px',
       },
       radioButton: {
         minWidth: '120px',
@@ -110,6 +107,9 @@ AddTrainingPlan = React.createClass({
       overlayStyle: {
         width: '0px',
       },
+      bar: {
+        width: '620px',
+      },
     }
     const items = [
   <MenuItem key={1} value={1} primaryText="Never" />,
@@ -120,9 +120,13 @@ AddTrainingPlan = React.createClass({
 ];
 
     return (
-      <form style={styles.paddingLeft} ref="form" onSubmit={this.onSubmit}>
+      <form ref="form" onSubmit={this.onSubmit}>
         <div style={styles.titleStyle}>
-          <label>添加培养计划</label>
+          <AppBar
+            title='添加培养计划'
+            showMenuIconButton={false}
+            style={styles.bar}
+            />
         </div>
         <div style={styles.div1}>
           <div>
