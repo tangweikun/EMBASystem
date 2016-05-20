@@ -4,7 +4,7 @@ Header = React.createClass({
     FlowRouter.go('/login')
   },
   render() {
-    const { AppBar, FlatButton } = MUI
+    const { AppBar, RaisedButton } = MUI
     const screenWidth = window.innerWidth
     let header = {
       position: 'fixed',
@@ -16,7 +16,7 @@ Header = React.createClass({
         <AppBar
           title="河北工业大学EMBA综合管理系统"
           showMenuIconButton={false}
-          iconElementRight={<FlatButton label="退出" onMouseEnter={this.logout}/>}
+          iconElementRight={<RaisedButton label="退出" onMouseDown={this.logout} secondary={true} />}
           />
         </div>
     );
