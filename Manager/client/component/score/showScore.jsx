@@ -25,7 +25,7 @@ ShowScore = React.createClass({
       div1: {
         // width: screenWidth,
         // paddingLeft: '50px',
-        marginBottom: '20px',
+        // marginBottom: '20px',
         // marginTop: '15px',
       },
       button: {
@@ -44,26 +44,36 @@ ShowScore = React.createClass({
       },
       titleStyle: {
         fontSize: '22px',
-        marginTop: '20px',
+        float: 'left',
+        // marginTop: '20px',
+      },
+      bar: {
+        width: '520px',
       },
     }
     return (
-      <div style={{paddingLeft: '15px'}}>
-        <div style={styles.titleStyle}>
-          <label>查询成绩</label>
-        </div>
+      <div>
         <div style={styles.div1}>
-          <TextField
-            id="courseName"
-            hintText="请在此输入课程名称"
-            style={styles.text}
-            />
-          <RaisedButton label='查询成绩' secondary={true} onMouseDown={this.handleClick}/>
+          <div style={styles.titleStyle}>
+            <AppBar
+              title='查询成绩'
+              showMenuIconButton={false}
+              style={styles.bar}
+              />
+          </div>
+          <div style={{float: 'right', marginTop: '15px'}}>
+            <TextField
+              id="courseName"
+              hintText="请在此输入课程名称"
+              style={styles.text}
+              />
+            <RaisedButton label='确定' secondary={true} onMouseDown={this.handleClick}/>
+          </div>
+        </div>
         <div>
           {this.renderScore()}
         </div>
       </div>
-    </div>
     )
   }
 })
