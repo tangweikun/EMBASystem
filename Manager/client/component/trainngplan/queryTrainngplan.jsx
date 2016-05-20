@@ -37,7 +37,7 @@ QueryTrainngplan = React.createClass({
         marginLeft: '50px',
       },
       text: {
-        width: '160px',
+        width: '80px',
         marginRight: '20px',
       },
       label: {
@@ -63,19 +63,19 @@ QueryTrainngplan = React.createClass({
     return (
       <div>
         <div style={styles.div1}>
-          { this.state.annual ?
-              <div style={styles.titleStyle}>
+          {
+            <div style={styles.titleStyle}>
                   <AppBar
                     title={`${this.state.annual}届培养计划`}
                     showMenuIconButton={false}
                     style={styles.bar}
                     />
-              </div> : null
+            </div>
           }
           <div style={{float: 'right', marginTop: '15px'}}>
             <TextField
               id="annual"
-              hintText="输入届数,如‘2013’"
+              hintText="输入届数"
               style={styles.text}
               />
             <RaisedButton label='查询' secondary={true} onMouseDown={this.handleClick}/>

@@ -59,7 +59,19 @@ ShowTrainingPlan = React.createClass({
 
   render() {
     if (!this.data.ready) return null
-    const {AppBar,ListItem} = MUI
+    const {AppBar, ListItem, CircularProgress} = MUI
+    console.log(">>>>",this.data.course.length);
+
+    if (!this.data.course.length) {
+      return <div style={{ marginLeft: '50px', marginTop: '70px'}}>
+        <div style={{marginBottom: '70px', fontSize: '18px'}}>您所查询的内容不存在，请在重新输入所需查找的培养计划届数，如'2013'</div>
+        <CircularProgress size={1} />
+        <CircularProgress size={1.5} />
+        <CircularProgress size={2} />
+        <CircularProgress size={2.5} />
+        </div>
+    }
+
     const styles = {
       titleStyle: {
         fontSize: '22px',
