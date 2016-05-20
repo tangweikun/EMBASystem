@@ -68,17 +68,27 @@ ShowTeacher = React.createClass({
 
   render() {
     if (!this.data.ready) return null
+    const { RaisedButton, TextField, AppBar } = MUI
     const styles = {
       titleStyle: {
         fontSize: '22px',
-        marginTop: '20px',
+        // marginTop: '20px',
         marginBottom: '10px',
+        // position: 'fixed',
+        // zIndex: '4',
+      },
+      bar: {
+        width: '560px',
       },
     }
     return (
       <div>
-        <div className="col-md-9" style={styles.titleStyle}>
-          <label>教师列表</label>
+        <div style={styles.titleStyle}>
+          <AppBar
+            title='教师列表'
+            showMenuIconButton={false}
+            style={styles.bar}
+            />
         </div>
         <div>
           {this.renderTeacher()}
