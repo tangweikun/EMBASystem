@@ -56,7 +56,7 @@ QueryTrainngplan = React.createClass({
         paddingLeft: '15px',
       },
       bar: {
-        width: '520px',
+        width: '360px',
       },
     }
 

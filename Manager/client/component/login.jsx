@@ -77,33 +77,34 @@ Login = React.createClass({
         marginLeft: (screenWidth - 600) / 2 + 'px',
         marginTop: '100px',
         textAlign: 'center',
-        width: '600px',
-        height: '600px'
+        width: '500px',
+        height: '350px',
+        border: '2px solid #00bcd4',
       },
       div1: {
         width: '400px',
         // textAlign: 'center',
-        marginLeft: '110px',  //25px
+        marginLeft: '50px',  //25px
         marginBottom: '32px',  //32px
       },
       button: {
-        width: '400px',
+        width: '300px',
         marginLeft: '25px',  //25px
       },
       text: {
-        width: '300px',
+        width: '200px',
       },
       label: {
-        marginRight: '5px',
+        marginRight: '15px',
         fontSize: '18px'
       },
       bar: {
         marginBottom: '30px',
       },
       contentStyle: {
-        width: '260px',  //'250px',
-        left: '15px',   //'-305px',
-        top: '-180px',  //'-20px',
+        width: '300px',  //'250px',
+        left: '-37px',   //'-305px',
+        top: '-60px',  //'-20px',
       },
       bodyStyle: {
         fontSize: '16px',
@@ -115,7 +116,7 @@ Login = React.createClass({
     return (
       <form ref="form" onSubmit={this.onSubmit} style={styles.form}>
         <AppBar
-          title="登录"
+          title="河北工业大学EMBA综合管理系统"
           showMenuIconButton={false}
           style={styles.bar}
           />
@@ -154,7 +155,7 @@ Login = React.createClass({
           overlayStyle={styles.overlayStyle}
           bodyStyle={styles.bodyStyle}
         >
-        用户名不存在或者密码错误
+        账号不存在或者密码错误
         </Dialog>
       </div>
       </form>

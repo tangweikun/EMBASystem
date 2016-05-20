@@ -11,6 +11,7 @@ ChangePassword = React.createClass({
   getInitialState() {
     return {
       open: false,
+      content: '密码不得少于6位，请重新输入！',
     }
   },
 
@@ -32,19 +33,23 @@ ChangePassword = React.createClass({
     let newPassword = document.getElementById('newPassword').value.trim()
     let that = this
     if (!newPassword || !oldPassword || newPassword.length < 6) {
-      that.handleOpen()
+      that.state.content = '密码不得少于6位，请重新输入！'
       document.getElementById('newPassword').value = ''
+      that.handleOpen()
       return
     }
     Accounts.changePassword(oldPassword, newPassword, function(error){
       if (error) {
+        that.state.content = '旧密码错误，请重新输入！'
         that.handleOpen()
-        document.getElementById('oldPassword').value = ''
-        document.getElementById('newPassword').value = ''
       } else {
-        FlowRouter.go('/')
+        that.state.content = '密码修改成功，请记住新密码！'
+        that.handleOpen()
       }
     })
+    document.getElementById('oldPassword').value = ''
+    document.getElementById('newPassword').value = ''
+
   },
   render() {
     if (!this.data.ready) return null
@@ -88,9 +93,9 @@ ChangePassword = React.createClass({
         marginBottom: '30px',
       },
       contentStyle: {
-        width: '260px',  //'250px',
-        left: '-55px',   //'-305px',
-        top: '-90px',  //'-20px',
+        width: '380px',  //'250px',
+        left: '72px',   //'-305px',
+        top: '-105px',  //'-20px',
       },
       bodyStyle: {
         fontSize: '16px',
@@ -141,7 +146,7 @@ ChangePassword = React.createClass({
           overlayStyle={styles.overlayStyle}
           bodyStyle={styles.bodyStyle}
         >
-        旧密码错误或者新密码少于6位，请重新输入
+        {this.state.content}
         </Dialog>
       </div>
       </form>
