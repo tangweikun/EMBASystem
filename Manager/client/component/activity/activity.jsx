@@ -61,15 +61,15 @@ AddActivity = React.createClass({
         </div>
         <div style={styles.div1}>
           <div>
-            <label style={styles.label}>讲座人</label>
+            <label style={styles.label}>主题</label>
             <TextField
               id="topic"
-              hintText="请输入活动主题"
+              hintText="请输入讲座主题"
               style={styles.text}
               />
           </div>
           <div>
-            <label style={styles.label}>主题</label>
+            <label style={styles.label}>讲座人</label>
             <TextField
               id="speaker"
               hintText="请输入讲座人"
@@ -80,7 +80,7 @@ AddActivity = React.createClass({
             <label style={styles.label}>地点</label>
             <TextField
               id="where"
-              hintText="请输入活动地点"
+              hintText="请输入讲座地点"
               style={styles.text}
               />
           </div>
@@ -88,7 +88,7 @@ AddActivity = React.createClass({
             <label style={styles.label}>日期</label>
             <TextField
               id="date"
-              hintText="请输入活动日期"
+              hintText="请输入讲座日期"
               style={styles.text}
               />
           </div>
@@ -96,7 +96,7 @@ AddActivity = React.createClass({
             <label style={styles.label}>时间</label>
             <TextField
               id="time"
-              hintText="请选择活动时间"
+              hintText="请输入讲座时间"
               style={styles.text}
               />
           </div>

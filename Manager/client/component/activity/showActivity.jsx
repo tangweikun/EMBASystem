@@ -26,7 +26,7 @@ ShowActivity = React.createClass({
         width: '140px',
       },
       div1: {
-        marginTop: '10px',
+        // marginTop: '10px',
       },
     }
     return this.data.activity.map(function(a,n){
@@ -39,12 +39,15 @@ ShowActivity = React.createClass({
             <div style={styles.div1}>
               <span style={styles.span1}>讲座人</span>
               <span style={styles.span3}>{a.speaker}</span>
-              <span style={styles.span1}>地点</span>
-              <span style={styles.span2}>{a.where}</span>
+
               <span style={styles.span1}>日期</span>
               <span style={styles.span3}>{a.date}</span>
               <span style={styles.span1}>时间</span>
               <span style={styles.span3}>{a.time}</span>
+            </div>
+            <div>
+              <span style={styles.span1}>地点</span>
+              <span style={styles.span2}>{a.where}</span>
             </div>
           </div>
           }
