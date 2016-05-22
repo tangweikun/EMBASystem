@@ -21,8 +21,16 @@ ShowCommit = React.createClass({
 
   render() {
     if (!this.data.ready) return null
+    const {AppBar} = MUI
     return (
       <div>
+        <div style={{fontSize: '22px', marginBottom: '30px'}}>
+          <AppBar
+            title='选课申请'
+            showMenuIconButton={false}
+            style={{width: '620px'}}
+            />
+        </div>
         {this.rendercourse()}
       </div>
     )

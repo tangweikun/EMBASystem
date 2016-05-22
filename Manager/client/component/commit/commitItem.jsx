@@ -41,9 +41,11 @@ CommitItem = React.createClass({
       label: {
         fontSize: '18px',
         marginRight: '8px',
+        minWidth: '100px'
       },
       sty1: {
         marginBottom: '15px',
+        marginLeft: '30px',
       }
     }
     return (
@@ -53,8 +55,8 @@ CommitItem = React.createClass({
           <label style={styles.label}>{this.props.commit.courseName}</label>
           <label style={styles.label}>{this.props.commit.studentId}</label>
           <label style={styles.label}>{this.props.commit.theClass}</label>
-          <div><input type="button" value="同意" onClick={this._onClick}  /></div>
-          <div><input type="button" value="拒绝" onClick={this._onClick}  /></div>
+          <div><input type="button" value="同意" onClick={this._onClick} style={{border: 'none',color: '#ffffff',backgroundColor: '#00bcd4',marginLeft: '15px', width: '60px'}} /></div>
+          <div><input type="button" value="拒绝" onClick={this._onClick} style={{border: 'none',color: '#ffffff',backgroundColor: '#00bcd4',marginLeft: '10px', width: '60px'}} /></div>
         </div>
       <Divider />
       </div>
