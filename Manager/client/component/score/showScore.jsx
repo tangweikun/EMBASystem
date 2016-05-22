@@ -33,7 +33,7 @@ ShowScore = React.createClass({
         marginLeft: '50px',
       },
       text: {
-        width: '270px',
+        width: '170px',
         marginRight: '20px',
       },
       label: {
@@ -49,6 +49,7 @@ ShowScore = React.createClass({
       },
       bar: {
         width: '400px',
+        marginBottom: '50px',
       },
     }
     return (

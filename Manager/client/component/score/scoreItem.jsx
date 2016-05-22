@@ -25,7 +25,8 @@ ScoreItem = React.createClass({
     const styles = {
       label: {
         marginRight: '20px',
-        minWidth: '50px',
+        minWidth: '80px',
+        fontSize: '18px',
       },
       d1: {
         clear: 'both',
@@ -53,8 +54,6 @@ ScoreItem = React.createClass({
             style={styles.textField}
              />
         </div>
-          {/*<div className="col-md-2">{this.data.score.trainingPlan[courseId].state}</div>*/}
-          {/*<div className="col-md-2"><input type="text" onBlur={this._txtBlur}/></div>*/}
       </div>
     )
   }

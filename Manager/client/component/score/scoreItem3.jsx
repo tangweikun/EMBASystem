@@ -20,25 +20,26 @@ ScoreItem3 = React.createClass({
   },
   render() {
     if (!this.data.ready || !this.props.courseId) return null
+    if (!this.data.score) return null
+    // if (!this.data.score.trainingPlan[courseId]) return null
+    // if (!this.data.score.trainingPlan[courseId].score) return null
     const { FlatButton, ListItem, TextField } = MUI
     let courseId = this.props.courseId
     const styles = {
       label: {
         marginRight: '20px',
-        minWidth: '50px',
+        minWidth: '100px',
+        fontSize: '18px',
       },
       d1: {
         clear: 'both',
         float: 'left',
+        marginLeft: '50px',
       },
       textField: {
         width: '80px',
       },
     }
-
-    console.log("----",this.data.score ? this.data.score.className : '222');
-
-
 
     return (
       <div style={styles.d1}>
@@ -49,8 +50,6 @@ ScoreItem3 = React.createClass({
           <label style={styles.label}>{this.props.courseName}</label>
           <label style={styles.label}>{this.data.score.trainingPlan[courseId].score}</label>
         </div>
-          {/*<div className="col-md-2">{this.data.score.trainingPlan[courseId].state}</div>*/}
-          {/*<div className="col-md-2"><input type="text" onBlur={this._txtBlur}/></div>*/}
       </div>
     )
   }

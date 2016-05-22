@@ -78,7 +78,7 @@ AddScore = React.createClass({
   render() {
     if (!this.data.ready) return null
     return (
-      <div style={{paddingLeft: '15px'}}>
+      <div style={{marginLeft: '50px'}}>
         {this.renderScore()}
       </div>
     )
