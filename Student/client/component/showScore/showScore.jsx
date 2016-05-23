@@ -26,6 +26,24 @@ ShowScore = React.createClass({    //选课
   },
 
   rendercourse() {
+    const { ListItem, Divider } = MUI
+    const styles = {
+      span1: {
+        marginRight: '8px',
+        // width: '20px',
+      },
+      span2: {
+        marginRight: '36px',
+        // width: ''
+      },
+      span3: {
+        marginRight: '20px',
+        width: '140px',
+      },
+      div1: {
+        marginTop: '10px',
+      },
+    }
     function transform(obj) {
       let arr = []
       for (let item in obj) {
@@ -42,8 +60,30 @@ ShowScore = React.createClass({    //选课
     console.log(">>>",trainingPlan2);
 
     return trainingPlan2.map(function(a,n){
-      if (a.status == '可选') {
-        return <ScoreItem trainingPlan={a} key={n} />
+      if (a.score) {
+        return (
+          <div key={n} className='col-md-9'>
+          <ListItem
+            primaryText={a.courseName}
+            secondaryText={
+              <div>
+              <div style={styles.div1}>
+                <span style={styles.span1}>成绩</span>
+                <span style={styles.span3}>{a.score}</span>
+                <span style={styles.span1}>学分</span>
+                <span style={styles.span3}>{a.details.credit}</span>
+                <span style={styles.span1}>考察方式</span>
+                <span style={styles.span3}>{a.details.evaluationMode}</span>
+                <span style={styles.span1}>类别</span>
+                <span style={styles.span2}>{a.details.category}</span>
+              </div>
+            </div>
+            }
+            secondaryTextLines={2}
+          />
+        <Divider />
+          </div>
+        )
       } else {
         return null
       }
@@ -52,20 +92,8 @@ ShowScore = React.createClass({    //选课
 
   render() {
     if (!this.data.ready) return null
-
     return (
       <div>
-        <div className="col-md-9">
-            <div className="col-md-2">课程编号</div>
-            <div className="col-md-2">课程名称</div>
-            <div className="col-md-2">类别</div>
-            <div className="col-md-1">学分</div>
-            <div className="col-md-1">学时</div>
-            <div className="col-md-1">课程状态</div>
-            <div className="col-md-1">是否可选</div>
-            <div className="col-md-1">选课</div>
-
-        </div>
         {this.rendercourse()}
       </div>
     )
