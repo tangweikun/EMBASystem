@@ -58,7 +58,7 @@ CommitItem = React.createClass({
       courseName: {
         minWidth: '200px',
         float: 'left',
-        fontSize: '22px',
+        fontSize: '20px',
         lineHeight: '40px',
         height: '40px',
       },

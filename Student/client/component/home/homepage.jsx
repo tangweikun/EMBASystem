@@ -86,7 +86,7 @@ HomePage = React.createClass({
             />
          <Divider />
             <ListItem
-                leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
+                leftIcon={<i className="fa fa-volume-up fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
                 primaryText="活动公告"
                 onMouseEnter={this.onTouchTap5}
                 onTouchTap={this.onTouchTap5}
