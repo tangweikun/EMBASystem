@@ -15,9 +15,6 @@ ShowScore = React.createClass({    //选课
       commit = Commit.findOne({studentId: studentId})
       console.log("score-->",score);
     }
-
-
-
     return {
       score: sub1.ready() ? score : null,
       commit: sub3.ready() ? commit : null,

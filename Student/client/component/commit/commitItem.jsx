@@ -70,7 +70,8 @@ CommitItem = React.createClass({
         marginRight: '8px',
       },
       sty1: {
-        marginBottom: '15px',
+        marginTop: '15px',
+        marginLeft: '15px',
       }
     }
     return (
@@ -78,7 +79,18 @@ CommitItem = React.createClass({
         <div>
           <div style={styles.courseName}>{this.props.trainingPlan.courseName}</div>
           <div style={styles.button}>
-            <input type='button' value={this.data.state || '申请选课'} disabled={this.data.disabled || this.state.disabled} onClick={this._onClick}/>
+            <input
+              type='button'
+              value={this.data.state || '申请选课'} disabled={this.data.disabled || this.state.disabled} onClick={this._onClick}
+              style={{
+                color: '#ffffff',
+                backgroundColor: '#00bcd4',
+                border: 'none',
+                minWidth: '90px',
+                textAlign: 'center',
+                fontSize: '18px',
+                marginTop: '5px'}}
+                />
             </div>
         </div>
         <div style={styles.d2}>

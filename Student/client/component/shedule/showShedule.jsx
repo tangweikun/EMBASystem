@@ -72,15 +72,19 @@ ShowSchedule = React.createClass({
     const styles = {
       span1: {
         marginRight: '8px',
+        fontWeight: 'bold',
+        color: 'black',
         // width: '20px',
       },
       span2: {
         marginRight: '36px',
+        fontWeight: 'bold',
         // width: ''
       },
       span3: {
         marginRight: '20px',
         width: '140px',
+        fontWeight: 'bold',
       },
       div1: {
         marginTop: '1px',
@@ -91,6 +95,7 @@ ShowSchedule = React.createClass({
         <div key={n} className='col-md-9'>
         <ListItem
           primaryText={a.courseName}
+          style={{fontWeight: 'bold', color: 'black'}}
           secondaryText={
             <div>
             <div style={styles.div1}>

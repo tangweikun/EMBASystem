@@ -15,15 +15,19 @@ ShowActivity = React.createClass({
     const styles = {
       span1: {
         marginRight: '8px',
+        fontWeight: 'bold',
+        color: 'black',
         // width: '20px',
       },
       span2: {
         marginRight: '36px',
+        fontWeight: 'bold',
         // width: ''
       },
       span3: {
         marginRight: '20px',
         width: '140px',
+        fontWeight: 'bold',
       },
       div1: {
         marginTop: '10px',
@@ -34,17 +38,20 @@ ShowActivity = React.createClass({
         <div key={n} className='col-md-9'>
         <ListItem
           primaryText={a.topic}
+          style={{fontWeight: 'bold', color: 'black'}}
           secondaryText={
             <div>
-            <div style={styles.div1}>
+            <div>
               <span style={styles.span1}>讲座人</span>
               <span style={styles.span3}>{a.speaker}</span>
-              <span style={styles.span1}>地点</span>
-              <span style={styles.span2}>{a.where}</span>
               <span style={styles.span1}>日期</span>
               <span style={styles.span3}>{a.date}</span>
               <span style={styles.span1}>时间</span>
               <span style={styles.span3}>{a.time}</span>
+            </div>
+            <div>
+              <span style={styles.span1}>地点</span>
+              <span style={styles.span2}>{a.where}</span>
             </div>
           </div>
           }
