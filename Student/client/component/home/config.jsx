@@ -9,7 +9,7 @@ Config = React.createClass({
   },
 
   onTouchTap3() {
-    // FlowRouter.go('/aboout')
+    FlowRouter.go('/about')
   },
 
   onTouchTap4() {

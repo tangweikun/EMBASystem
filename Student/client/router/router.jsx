@@ -75,3 +75,9 @@ FlowRouter.route('/config', {
     ReactLayout.render(Layout, {content: <Config />, title: '设置'})
   }
 });
+
+FlowRouter.route('/about', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <About />, title: '关于我们'})
+  }
+});

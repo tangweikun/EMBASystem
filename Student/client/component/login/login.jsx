@@ -67,7 +67,7 @@ Login = React.createClass({
       <FlatButton
         label="确定"
         secondary={true}
-        onTouchTap={this.handleClose}
+        onTouchStart={this.handleClose}
         onMouseDown={this.handleClose}
         keyboardFocused={true}
       />,
@@ -95,11 +95,12 @@ Login = React.createClass({
       },
       bar: {
         marginBottom: screenWidth * 0.156,
+        textAlign: 'center',
       },
       contentStyle: {
         width: screenWidth * 0.667,  //'250px',
-        left: screenWidth * 0.813,   //'-305px',
-        top: screenWidth * 0.053,  //'-20px',
+        // left: screenWidth * 0.813,   //'-305px',
+        top: '-150px',  //'-20px',
       },
       bodyStyle: {
         fontSize: '16px',
