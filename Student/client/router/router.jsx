@@ -69,3 +69,9 @@ FlowRouter.route('/changepassword', {
     ReactLayout.render(Layout, {content: <ChangePassword />, title: '重置密码'})
   }
 });
+
+FlowRouter.route('/config', {
+  action: function() {
+    ReactLayout.render(Layout, {content: <Config />, title: '设置'})
+  }
+});

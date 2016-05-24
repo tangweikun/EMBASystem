@@ -61,7 +61,7 @@ Layout = React.createClass({
             </a>
           </label>
           <label style={styles.label}>
-            <a href='/changepassword'>
+            <a href='/config'>
               <i className="fa fa-cog fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
             </a>
           </label>

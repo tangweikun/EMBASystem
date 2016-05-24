@@ -71,18 +71,18 @@ ShowSchedule = React.createClass({
     const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
     const styles = {
       span1: {
-        marginRight: '8px',
+        marginRight: '5px',
         fontWeight: 'bold',
         color: 'black',
         // width: '20px',
       },
       span2: {
-        marginRight: '36px',
+        marginRight: '10px',
         fontWeight: 'bold',
         // width: ''
       },
       span3: {
-        marginRight: '20px',
+        marginRight: '10px',
         width: '140px',
         fontWeight: 'bold',
       },
@@ -99,14 +99,14 @@ ShowSchedule = React.createClass({
           secondaryText={
             <div>
             <div style={styles.div1}>
-              <span style={styles.span1}>上课时间</span>
+              <span style={styles.span1}>时间</span>
               <span style={styles.span2}>{a.when}</span>
-              <span style={styles.span1}>上课地点</span>
+              <span style={styles.span1}>地点</span>
               <span style={styles.span2}>{a.where}</span>
-              <span style={styles.span1}>上课班级</span>
+              <span style={styles.span1}>班级</span>
               <span style={styles.span3}>{a.className}</span>
             <div>
-              <span style={styles.span1}>上课教师</span>
+              <span style={styles.span1}>教师</span>
               <span style={styles.span2}>{a.teacherName}</span>
               <span style={styles.span1}>教师单位</span>
               <span style={styles.span3}>{a.teacherOrganization}</span>
