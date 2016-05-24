@@ -54,13 +54,13 @@ FlowRouter.route('/commit', {
 
 FlowRouter.route('/lecture', {
   action: function() {
-    ReactLayout.render(Layout, {content: <ShowLecture />, title: '讲座公告'})
+    ReactLayout.render(Layout, {content: <ShowLecture />, title: '活动公告'})
   }
 });
 
 FlowRouter.route('/activity', {
   action: function() {
-    ReactLayout.render(Layout, {content: <ShowActivity />, title: '活动公告'})
+    ReactLayout.render(Layout, {content: <ShowActivity />, title: '讲座公告'})
   }
 });
 

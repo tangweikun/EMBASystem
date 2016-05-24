@@ -73,14 +73,9 @@ ShowActivity = React.createClass({
       },
     }
     return (
-      <div>
-        <div className="col-md-9" style={styles.titleStyle}>
-          <span>讲座列表</span>
-        </div>
         <div>
           {this.renderTeacher()}
         </div>
-      </div>
     )
   }
 })

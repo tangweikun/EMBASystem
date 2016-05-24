@@ -132,14 +132,10 @@ ShowSchedule = React.createClass({
       },
     }
     return (
-      <div>
-        <div className="col-md-9" style={styles.titleStyle}>
-          <span>课程表</span>
-        </div>
+
         <div>
           {this.rendercourse()}
         </div>
-      </div>
     )
   }
 })

@@ -106,11 +106,6 @@ ChangePassword = React.createClass({
     }
     return (
       <form ref="form" onSubmit={this.onSubmit} style={styles.form}>
-        <AppBar
-          title="修改密码"
-          showMenuIconButton={false}
-          style={styles.bar}
-          />
         <div style={styles.div1}>
           <div>
             <label style={styles.label}>旧密码</label>

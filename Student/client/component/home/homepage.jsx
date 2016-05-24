@@ -79,7 +79,7 @@ HomePage = React.createClass({
           <Divider />
             <ListItem
               leftIcon={<i className="fa fa-envelope-o fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
-              primaryText="讲座公告"
+              primaryText="活动公告"
               onMouseEnter={this.onTouchTap4}
               onTouchTap={this.onTouchTap4}
               rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
@@ -87,7 +87,7 @@ HomePage = React.createClass({
          <Divider />
             <ListItem
                 leftIcon={<i className="fa fa-volume-up fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
-                primaryText="活动公告"
+                primaryText="讲座公告"
                 onMouseEnter={this.onTouchTap5}
                 onTouchTap={this.onTouchTap5}
                 rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{color: '#00bcd4',lineHeight: '24px'}}></i>}
