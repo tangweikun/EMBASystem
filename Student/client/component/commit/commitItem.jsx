@@ -53,7 +53,7 @@ CommitItem = React.createClass({
       },
       button: {
         float: 'left',
-        marginLeft: '50px',
+        marginLeft: '40px',
       },
       courseName: {
         minWidth: '200px',
@@ -86,7 +86,8 @@ CommitItem = React.createClass({
                 color: '#ffffff',
                 backgroundColor: '#00bcd4',
                 border: 'none',
-                minWidth: '90px',
+                minWidth: '80px',
+                height: '40px',
                 textAlign: 'center',
                 fontSize: '18px',
                 marginTop: '5px'}}
