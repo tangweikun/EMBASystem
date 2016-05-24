@@ -27,6 +27,8 @@ ShowScore = React.createClass({    //选课
     const styles = {
       span1: {
         marginRight: '8px',
+        fontWeight: 'bold',
+        color: 'black',
         // width: '20px',
       },
       span2: {
@@ -35,6 +37,7 @@ ShowScore = React.createClass({    //选课
       },
       span3: {
         marginRight: '20px',
+        fontWeight: 'bold',
         width: '140px',
       },
       div1: {
@@ -69,8 +72,6 @@ ShowScore = React.createClass({    //选课
                 <span style={styles.span3}>{a.score}</span>
                 <span style={styles.span1}>学分</span>
                 <span style={styles.span3}>{a.details.credit}</span>
-                <span style={styles.span1}>考察方式</span>
-                <span style={styles.span3}>{a.details.evaluationMode}</span>
                 <span style={styles.span1}>类别</span>
                 <span style={styles.span2}>{a.details.category}</span>
               </div>

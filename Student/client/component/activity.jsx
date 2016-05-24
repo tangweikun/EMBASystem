@@ -14,7 +14,7 @@ ShowActivity = React.createClass({
     const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
     const styles = {
       span1: {
-        marginRight: '8px',
+        marginRight: '5px',
         fontWeight: 'bold',
         color: 'black',
         // width: '20px',
@@ -25,7 +25,7 @@ ShowActivity = React.createClass({
         // width: ''
       },
       span3: {
-        marginRight: '20px',
+        marginRight: '10px',
         width: '140px',
         fontWeight: 'bold',
       },

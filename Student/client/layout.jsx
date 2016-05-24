@@ -41,6 +41,7 @@ Layout = React.createClass({
       <div style={layout}>
         <div style={styles.header}>
           <AppBar
+            style={{textAlign: 'center'}}
             title={this.props.title}
             showMenuIconButton={false}
             />

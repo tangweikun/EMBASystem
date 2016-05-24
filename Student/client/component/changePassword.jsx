@@ -68,34 +68,36 @@ ChangePassword = React.createClass({
       form: {
         // marginLeft: (screenWidth - 600) / 2 + 'px',
         // marginTop: '100px',
-        textAlign: 'center',
-        width: '600px',
-        height: '600px'
+        // textAlign: 'center',
+        // width: '600px',
+        // height: '600px'
       },
       div1: {
-        width: '400px',
+        width: screenWidth,
+        paddingLeft: screenWidth * 0.078,  //25px
+        marginBottom: screenWidth * 0.094,  //32px
         // textAlign: 'center',
-        marginLeft: '110px',  //25px
+        // marginLeft: '110px',  //25px
         marginBottom: '32px',  //32px
       },
       button: {
-        width: '400px',
-        marginLeft: '25px',  //25px
+        width: screenWidth * 0.84,
+        marginLeft: screenWidth * 0.078,  //25px
       },
       text: {
-        width: '300px',
+        width: screenWidth * 0.7,
       },
       label: {
-        marginRight: '5px',
+        marginRight: screenWidth * 0.025,
         fontSize: '18px'
       },
       bar: {
         marginBottom: '30px',
       },
       contentStyle: {
-        width: '380px',  //'250px',
-        left: '72px',   //'-305px',
-        top: '-105px',  //'-20px',
+        width: screenWidth * 0.667,  //'250px',
+        left: screenWidth * 0.813,   //'-305px',
+        top: screenWidth * 0.053,  //'-20px',
       },
       bodyStyle: {
         fontSize: '16px',
