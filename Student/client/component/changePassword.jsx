@@ -58,7 +58,7 @@ ChangePassword = React.createClass({
       <FlatButton
         label="确定"
         secondary={true}
-        onTouchTap={this.handleClose}
+        onTouchStart={this.handleClose}
         onMouseDown={this.handleClose}
         keyboardFocused={true}
       />,
@@ -66,6 +66,7 @@ ChangePassword = React.createClass({
     const screenWidth = window.innerWidth
     const styles = {
       form: {
+        width: screenWidth,
         // marginLeft: (screenWidth - 600) / 2 + 'px',
         // marginTop: '100px',
         // textAlign: 'center',
@@ -74,11 +75,12 @@ ChangePassword = React.createClass({
       },
       div1: {
         width: screenWidth,
+        marginTop: '32px',
         paddingLeft: screenWidth * 0.078,  //25px
         marginBottom: screenWidth * 0.094,  //32px
         // textAlign: 'center',
         // marginLeft: '110px',  //25px
-        marginBottom: '32px',  //32px
+        // marginBottom: '32px',  //32px
       },
       button: {
         width: screenWidth * 0.84,
@@ -93,11 +95,13 @@ ChangePassword = React.createClass({
       },
       bar: {
         marginBottom: '30px',
+        textAlign: 'center',
       },
       contentStyle: {
+        left: '-250px',
         width: screenWidth * 0.667,  //'250px',
-        left: screenWidth * 0.813,   //'-305px',
-        top: screenWidth * 0.053,  //'-20px',
+        // left: screenWidth * 0.813,   //'-305px',
+        top: '-150px', //'-20px',
       },
       bodyStyle: {
         fontSize: '16px',

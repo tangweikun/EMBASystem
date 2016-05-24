@@ -64,6 +64,7 @@ Config = React.createClass({
             leftIcon={<i className="fa fa-calendar fa-lg" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
             primaryText="重置密码"
             onTouchStart={this.onTouchTap1}
+            onMouseDown={this.onTouchTap1}
             rightIcon={<i className="fa fa-chevron-right" aria-hidden="true" style={{lineHeight: '24px', color: '#00bcd4'}}></i>}
           />
           <Divider />
