@@ -41,7 +41,7 @@ Layout = React.createClass({
       <div style={layout}>
         <div style={styles.header}>
           <AppBar
-            title="我的培养计划"
+            title={this.props.title}
             showMenuIconButton={false}
             />
         </div>
@@ -60,7 +60,7 @@ Layout = React.createClass({
             </a>
           </label>
           <label style={styles.label}>
-            <a href='/'>
+            <a href='/changepassword'>
               <i className="fa fa-cog fa-2x" aria-hidden="true"  style={{color:'#ffffff'}}></i>
             </a>
           </label>
