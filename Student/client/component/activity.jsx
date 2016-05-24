@@ -35,7 +35,7 @@ ShowActivity = React.createClass({
     }
     return this.data.activity.map(function(a,n){
       return (
-        <div key={n} className='col-md-9'>
+        <div key={n}>
         <ListItem
           primaryText={a.topic}
           style={{fontWeight: 'bold', color: 'black'}}

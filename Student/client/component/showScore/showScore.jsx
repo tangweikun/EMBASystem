@@ -59,7 +59,7 @@ ShowScore = React.createClass({    //选课
     return trainingPlan2.map(function(a,n){
       if (a.score) {
         return (
-          <div key={n} className='col-md-9'>
+          <div key={n}>
           <ListItem
             primaryText={a.courseName}
             secondaryText={

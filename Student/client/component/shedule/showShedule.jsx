@@ -92,7 +92,7 @@ ShowSchedule = React.createClass({
     }
     return this.data.schedule.map(function(a,n){
       return (
-        <div key={n} className='col-md-9'>
+        <div key={n}>
         <ListItem
           primaryText={a.courseName}
           style={{fontWeight: 'bold', color: 'black'}}
