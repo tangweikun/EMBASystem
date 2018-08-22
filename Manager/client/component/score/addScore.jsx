@@ -2,9 +2,10 @@ AddScore = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    const month = Number(moment().format('MM'))  //获取当前月份
-    let year = Number(moment().format('YYYY'))  //获取当前年份
+    const month = Number(moment().format('MM')) //获取当前月份
+    let year = Number(moment().format('YYYY')) //获取当前年份
     let season
+    let semester
     if (month > 0 && month < 2) {
       season = '秋'
       year = year - 1
@@ -22,7 +23,10 @@ AddScore = React.createClass({
     let sub2 = Meteor.subscribe('schedule')
     let score = Score.find({}).fetch()
     let schedule = Schedule.find({}).fetch()
-    let oneSchedule = Schedule.findOne({courseName: this.props.courseName, semester: semester})
+    let oneSchedule = Schedule.findOne({
+      courseName: this.props.courseName,
+      semester: semester,
+    })
     return {
       score: sub1.ready() ? score : null,
       schedule: sub2.ready() ? schedule : null,
@@ -32,18 +36,21 @@ AddScore = React.createClass({
   },
 
   renderScore() {
-    Array.prototype.deleteEle = function () {
-                var o = {}, newArr = [], i, j;
-                for (i = 0; i < this.length; i++) {
-                    if (typeof (o[this[i]]) == "undefined") {
-                        o[this[i]] = "";
-                    }
-                }
-                for (j in o) {
-                    newArr.push(j)
-                }
-                return newArr;
-            }
+    Array.prototype.deleteEle = function() {
+      var o = {},
+        newArr = [],
+        i,
+        j
+      for (i = 0; i < this.length; i++) {
+        if (typeof o[this[i]] == 'undefined') {
+          o[this[i]] = ''
+        }
+      }
+      for (j in o) {
+        newArr.push(j)
+      }
+      return newArr
+    }
     let oneSchedule
     let studentList
     let details
@@ -55,9 +62,8 @@ AddScore = React.createClass({
       oneSchedule = this.data.oneSchedule
       courseId = oneSchedule.courseId
       courseName = oneSchedule.courseName
-      console.log("////---",oneSchedule,courseName);
+      console.log('////---', oneSchedule, courseName)
     }
-
 
     details = oneSchedule ? oneSchedule.details : ''
     groupNum = details.length
@@ -66,21 +72,24 @@ AddScore = React.createClass({
     }
     let list = all.deleteEle()
 
-    console.log(">>>>>>>",list);
+    console.log('>>>>>>>', list)
 
-    return list.length > 0 ? list.map(function(a,n){
-      return <ScoreItem courseId={courseId}  key={n} studentId={a} courseName={courseName} />
-    }) : null
-
+    return list.length > 0
+      ? list.map(function(a, n) {
+          return (
+            <ScoreItem
+              courseId={courseId}
+              key={n}
+              studentId={a}
+              courseName={courseName}
+            />
+          )
+        })
+      : null
   },
-
 
   render() {
     if (!this.data.ready) return null
-    return (
-      <div style={{marginLeft: '50px'}}>
-        {this.renderScore()}
-      </div>
-    )
-  }
+    return <div style={{ marginLeft: '50px' }}>{this.renderScore()}</div>
+  },
 })

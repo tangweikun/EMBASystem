@@ -2,7 +2,7 @@ ShowSchedule = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let sub = Meteor.subscribe('schedule');
+    let sub = Meteor.subscribe('schedule')
     let schedule = ''
     let t1 = ''
     let count
@@ -13,9 +13,10 @@ ShowSchedule = React.createClass({
     let count2
     let all2 = []
     //按9月为划分
-    const month = Number(moment().format('MM'))  //获取当前月份
-    let year = Number(moment().format('YYYY'))  //获取当前年份
+    const month = Number(moment().format('MM')) //获取当前月份
+    let year = Number(moment().format('YYYY')) //获取当前年份
     let season
+    let semester
     if (month > 0 && month < 2) {
       season = '秋'
       year = year - 1
@@ -29,11 +30,10 @@ ShowSchedule = React.createClass({
       season = '秋'
       semester = year + season
     }
-    console.log(month,year,season,semester);
-
+    console.log(month, year, season, semester)
 
     if (sub.ready()) {
-      schedule = Schedule.find({semester: semester}).fetch();
+      schedule = Schedule.find({ semester: semester }).fetch()
       count1 = schedule.length
       for (let i = 0; i < count1; i++) {
         detailsList.push(schedule[i].details)
@@ -42,33 +42,42 @@ ShowSchedule = React.createClass({
       for (let j = 0; j < count2; j++) {
         all = [...all, ...detailsList[j]]
       }
-      console.log("message",all);
+      console.log('message', all)
 
-
-//只选择属于该学生的课程
+      //只选择属于该学生的课程
       let len = all.length
       for (let j = 0; j < len; j++) {
         let ss = all[j].studentList
-        console.log("ss",ss);
-        let studentId = Meteor.users.findOne({_id: Meteor.userId()}).profile.studentId
-        console.log("sid",studentId);
-        if (ss.indexOf(studentId) != "-1") {
-          console.log("ssssss",ss);
+        console.log('ss', ss)
+        let studentId = Meteor.users.findOne({ _id: Meteor.userId() }).profile
+          .studentId
+        console.log('sid', studentId)
+        if (ss.indexOf(studentId) != '-1') {
+          console.log('ssssss', ss)
           all2 = [...all2, ...all[j]]
         }
       }
-      console.log(">>>",all2);
+      console.log('>>>', all2)
     }
 
-
     return {
-      schedule:sub.ready() ? all2 : null,
+      schedule: sub.ready() ? all2 : null,
       ready: sub.ready(),
     }
   },
 
   rendercourse() {
-    const { List, ListItem, ActionGrade, ContentInbox, ContentDrafts, RaisedButton, ContentSend, Avatar, Divider } = MUI
+    const {
+      List,
+      ListItem,
+      ActionGrade,
+      ContentInbox,
+      ContentDrafts,
+      RaisedButton,
+      ContentSend,
+      Avatar,
+      Divider,
+    } = MUI
     const styles = {
       span1: {
         marginRight: '5px',
@@ -90,33 +99,33 @@ ShowSchedule = React.createClass({
         marginTop: '1px',
       },
     }
-    return this.data.schedule.map(function(a,n){
+    return this.data.schedule.map(function(a, n) {
       return (
         <div key={n}>
-        <ListItem
-          primaryText={a.courseName}
-          style={{fontWeight: 'bold', color: 'black'}}
-          secondaryText={
-            <div>
-            <div style={styles.div1}>
-              <span style={styles.span1}>时间</span>
-              <span style={styles.span2}>{a.when}</span>
-              <span style={styles.span1}>地点</span>
-              <span style={styles.span2}>{a.where}</span>
-              <span style={styles.span1}>班级</span>
-              <span style={styles.span3}>{a.className}</span>
-            <div>
-              <span style={styles.span1}>教师</span>
-              <span style={styles.span2}>{a.teacherName}</span>
-              <span style={styles.span1}>教师单位</span>
-              <span style={styles.span3}>{a.teacherOrganization}</span>
-            </div>
-            </div>
-          </div>
-          }
-          secondaryTextLines={2}
-        />
-      <Divider />
+          <ListItem
+            primaryText={a.courseName}
+            style={{ fontWeight: 'bold', color: 'black' }}
+            secondaryText={
+              <div>
+                <div style={styles.div1}>
+                  <span style={styles.span1}>时间</span>
+                  <span style={styles.span2}>{a.when}</span>
+                  <span style={styles.span1}>地点</span>
+                  <span style={styles.span2}>{a.where}</span>
+                  <span style={styles.span1}>班级</span>
+                  <span style={styles.span3}>{a.className}</span>
+                  <div>
+                    <span style={styles.span1}>教师</span>
+                    <span style={styles.span2}>{a.teacherName}</span>
+                    <span style={styles.span1}>教师单位</span>
+                    <span style={styles.span3}>{a.teacherOrganization}</span>
+                  </div>
+                </div>
+              </div>
+            }
+            secondaryTextLines={2}
+          />
+          <Divider />
         </div>
       )
     })
@@ -131,11 +140,6 @@ ShowSchedule = React.createClass({
         marginBottom: '10px',
       },
     }
-    return (
-
-        <div>
-          {this.rendercourse()}
-        </div>
-    )
-  }
+    return <div>{this.rendercourse()}</div>
+  },
 })

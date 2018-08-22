@@ -1,2 +1,2 @@
-export MONGO_URL=mongodb://127.0.0.1:27017/hebut
+export MONGO_URL=mongodb://twk:twk@ds161505.mlab.com:61505/hebut
 meteor -p 3332
